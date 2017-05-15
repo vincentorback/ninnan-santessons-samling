@@ -1,0 +1,30 @@
+.Intro {
+  max-width: 350px;
+  height: 350px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  background: #fff;
+  color: var(--color-black);
+  margin: 0 auto;
+
+  box-shadow: rgba(0, 0, 0, .2) 1px 2px 20px;
+
+  padding: .8em .9em;
+
+  font-size: 2em;
+  line-height: 1;
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+}
+
+.Intro-title {
+  word-spacing: 100%;
+}
+
+.Intro-date {
+  align-self: flex-end;
+}

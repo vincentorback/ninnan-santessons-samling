@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+figure,
+p,
+pre,
+form,
+ol,
+ul {
+  margin: 0;
+  font: inherit;
+  padding: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  appearance: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+strong,
+b {
+  font-weight: var(--font-bold);
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+abbr {
+  cursor: help;
+}
+
+/**
+ * Suppress the focus outline on links that cannot be accessed via keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ */
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/**
+ * Normalize text color for disabled elements and input placeholders
+ */
+:disabled {
+  color: inherit;
+  opacity: .4;
+  -webkit-text-fill-color: currentColor;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: .7;
+}
+
+/**
+ * Allow only vertical user resizing
+ */
+textarea {
+  resize: vertical;
+}

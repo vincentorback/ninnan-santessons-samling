@@ -1,0 +1,57 @@
+.Index {
+
+}
+
+.Index-item {
+  display: block;
+  text-align: center;
+  padding: 0 40px 40px;
+}
+
+.Index-itemImage {
+  display: block;
+  margin: 0 auto;
+  transition: opacity 200ms ease;
+}
+
+.Index-itemContent {
+  position: relative;
+}
+
+.Index-itemInfo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  font-size: 2em;
+
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.Index-itemTitle {
+  margin-top: .5em;
+  font-size: 2em;
+}
+
+
+.Index-item:hover .Index-itemImage {
+  opacity: .1;
+}
+
+html.touchevents .Index-itemInfo,
+.Index-item:hover .Index-itemInfo {
+  opacity: 1;
+}
+
+html.touchevents .Index-itemImage {
+  opacity: .6;
+}

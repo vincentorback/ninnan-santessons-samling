@@ -1,0 +1,30 @@
+/** @define Site */
+
+.Site {
+  font: var(--font-normal) 16px/var(--text-lineheight-small) var(--font-apercu-mono);
+  color: var(--color-black);
+  background: #fff;
+}
+
+
+.Site-container {
+  width: 90%;
+  max-width: var(--site-width);
+  margin: 0 auto;
+}
+
+@media (--sm-viewport) {
+  .Site-container {
+    width: calc(100% - 150px);
+  }
+}
+
+@media (--lg-viewport) {
+  .Site-container {
+    width: calc(100% - 200px);
+  }
+}
+
+.Site-container--narrow {
+  max-width: var(--site-width-narrow);
+}

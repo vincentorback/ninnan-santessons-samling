@@ -1,0 +1,154 @@
+/** @define Section */
+
+.Section {
+  position: relative;
+  width: 100%;
+  z-index: 0;
+  padding: var(--site-spacing-sm) 0;
+}
+
+@media (--xs-viewport) {
+  .Section {
+    padding: var(--site-spacing-percent) 0;
+  }
+}
+
+@media (--md-viewport) {
+  .Section {
+    padding: var(--site-spacing-md) 0;
+  }
+}
+
+@media (--lg-viewport) {
+  .Section {
+    padding: var(--site-spacing-lg) 0;
+  }
+}
+
+@media (--xl-viewport) {
+  .Section {
+    padding: var(--site-spacing-xl) 0;
+  }
+}
+
+
+.Section-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  line-height: 1;
+}
+
+
+
+.Section-scrollDown {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  font-size: 2em;
+  padding: 1em;
+  width: 100px;
+  text-align: center;
+}
+
+@media (min-height: 800px) {
+
+}
+
+
+
+.Section-chapterIntro {
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Section-chapterIntroTitle {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.Section-chapterIntroTitle:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+
+
+.Section-title {
+  font-size: 2em;
+  margin-bottom: var(--site-spacing-sm);
+}
+
+
+.Section--intro {
+  padding: var(--site-spacing-md) 0;
+}
+
+@media (--md-viewport) {
+  .Section--intro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.Section--noPad {
+  padding: 0;
+}
+
+.Section--gray {
+  background: var(--color-gray);
+  color: #fff;
+}
+
+.Section--black {
+  background: var(--color-black);
+  color: #fff;
+}
+
+.Section--white {
+  background: #fff;
+  color: var(--color-black);
+}
+
+
+.Section--images {
+  text-align: center;
+}
+
+.Section--images img {
+  display: block;
+  margin: 0 auto;
+}
+
+.Section--images img:not(:last-child) {
+  margin-bottom: 5vw;
+}
+
+
+
+.Section-image {
+  max-height: 100vh;
+  margin: 0 auto;
+}
+
+
+.Section--about,
+.Section--index {
+  position: relative;
+  z-index: 1;
+}
+
+.Section--about,
+.Section--index,
+.Section--about .Section,
+.Section--index .Section {
+  padding: 30px 0;
+}

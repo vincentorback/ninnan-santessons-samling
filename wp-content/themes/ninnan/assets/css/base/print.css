@@ -1,0 +1,14 @@
+@media print {
+  * {
+    background: none;
+    box-shadow: none;
+    color: #000;
+    text-shadow: none;
+  }
+
+  a {
+    text-decoration: underline;
+    border: 0 !important;
+    font-size: 1em;
+  }
+}

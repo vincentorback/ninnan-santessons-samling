@@ -1,0 +1,38 @@
+.Slideshow {
+  background: var(--color-gray);
+}
+
+.Slideshow-item {
+  overflow: hidden;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.Slideshow-itemImage {
+  display: block;
+  max-width: 90%;
+}
+
+
+@media (--md-viewport) {
+  .Slideshow--sticky {
+    position: sticky;
+    top: 0;
+
+    min-height: 500px;
+    height: 100vh;
+    width: 100%;
+    background: var(--color-gray);
+  }
+
+  .Slideshow--sticky .Slideshow-item {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Slideshow--sticky .Slideshow-itemImage {
+    margin: auto;
+    max-height: 100vh;
+  }
+}

@@ -1,0 +1,12 @@
+wp-config.php
+
+wp/
+!wp/.gitkeep
+
+wp-content/plugins
+!wp-content/plugins/.gitkeep
+
+wp-content/uploads
+!wp-content/uploads/.gitkeep
+
+node_modules
