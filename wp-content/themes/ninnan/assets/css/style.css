@@ -15,7 +15,7 @@ Author: Vincent Orback
 @import "suitcss-components-button";
 @import "suitcss-components-grid";
 @import "suitcss-components-select";
-@import "components/chapter";
+@import "components/chapters";
 @import "components/figure";
 @import "components/grid";
 @import "components/index";

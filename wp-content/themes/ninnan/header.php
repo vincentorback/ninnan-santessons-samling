@@ -32,16 +32,16 @@
           <span class="Navigation-linkInner">Om projektet</span>
         </a>
       </li>
-      <!--<li class="Navigation-item">
-        <a class="Navigation-link" href="#/">
+      <li class="Navigation-item">
+        <a class="Navigation-link" href="mailto:linnea.carlson@beckmans.se" target="_blank">
           <span class="Navigation-linkInner">Kontakt</span>
         </a>
       </li>
       <li class="Navigation-item">
-        <a class="Navigation-link" href="#/">
+        <a class="Navigation-link" href="#/" onClick="alert('vad ska det va här?')">
           <span class="Navigation-linkInner">Presskit</span>
         </a>
-      </li>-->
+      </li>
     </ul>
 
     <button class="Navigation-close js-navClose" type="button" aria-controlls="navigation">

@@ -1,7 +1,6 @@
 .Chapters {
   position: relative;
   z-index: 1;
-  /*background: red;*/
 }
 
 .Chapters-pagination {
@@ -15,11 +14,20 @@
   float: right;
   text-align: right;
 
-  font-size: 2em;
+  font-size: 1em;
   color: #fff;
 }
 
 .Chapters-paginationInner {
   display: block;
-  padding: 1em;
+  padding: 1em 1.3em;
+  background: var(--color-black);
+}
+
+@media (--md-viewport) {
+  .Chapters-paginationInner {
+    font-size: 2em;
+    padding: 1em;
+    background: transparent;
+  }
 }

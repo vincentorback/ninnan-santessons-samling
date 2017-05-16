@@ -33,7 +33,7 @@ $pagination = get_sub_field('paginering');
           <img
           class="Slideshow-itemImage js-lazy"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          data-src="<?php echo $slideshow_image['sizes']['large']; ?>"
+          data-src="<?php echo $slideshow_image['sizes']['medium']; ?>"
           <?php if ($imageCount > 1) { ?>data-slideshow="<?php echo $slideshow_id; ?>"<?php } ?>
           alt="<?php echo $slideshow_image['alt']; ?>">
         </div>

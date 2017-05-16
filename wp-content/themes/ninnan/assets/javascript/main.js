@@ -76,9 +76,8 @@
               afterInitialize: function () {
                 slideshowEl.classList.add(activeClass)
                 var slideshow = this
+
                 // TODO: Set up arrow keys clicks
-                // TODO: Set size on resize if not sticky 100vh
-                // TODO: Recalc size on resize
 
                 if (slideshowNavButtons) {
                   if (slideshowNavButtons[slideshow.page]) {

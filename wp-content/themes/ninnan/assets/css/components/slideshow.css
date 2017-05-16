@@ -92,6 +92,10 @@
 }
 
 
+.Slideshow--sticky {
+  padding: 5vw 0;
+}
+
 @media (--md-viewport) {
   .Slideshow--sticky {
     position: sticky;
@@ -99,6 +103,7 @@
     min-height: 500px;
     height: 100vh;
     width: 100%;
+    padding: 0;
   }
 
   .Slideshow--sticky .Slideshow-slider {
@@ -119,7 +124,7 @@
 }
 
 
-/* TODO: Javascript figure out biggest image ? */
+/* TODO: Nicer ? */
 .Slideshow--small {
   box-shadow: inset rgba(0, 0, 0, .1) 0 0 20px;
 }

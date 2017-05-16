@@ -13,28 +13,40 @@ if ($post_query->have_posts()) { ?>
       <h1 class="Section-title">Index</h1>
 
       <div class="Index Grid">
-      <?php while ($post_query->have_posts()) { $post_query->the_post(); ?>
-        <?php
-        $image_id = get_field('chapter_thumbnail');
+      <?php
+      while ($post_query->have_posts()) {
+        $post_query->the_post();
 
-        if ($image_id) {
-          $image = wp_get_attachment_image_src($image_id, 'thumbnail');
-          $image_src = $image[0];
-        ?>
+        if (have_rows('chapter_content')) {
+          while (have_rows('chapter_content')) {
+            the_row();
+
+            $thumbnail = get_sub_field('thumbnail');
+            if ($thumbnail) {
+              $image = wp_get_attachment_image_src($thumbnail);
+              $pagination = get_sub_field('paginering');
+      ?>
 
         <a class="Index-item Grid-cell u-sm-size1of2 u-md-size1of3 u-lg-size1of5" href="#chapter_<?php echo $post->menu_order; ?>">
           <div class="Index-itemContent">
-            <img class="Index-itemImage js-lazy" data-src="<?php echo $image_src; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img class="Index-itemImage js-lazy" data-src="<?php echo $image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
             <div class="Index-itemInfo">
               <div>
-                <p><?php the_title(); ?></p>
+                <p>TODO<?php //the_title(); ?></p>
               </div>
             </div>
           </div>
-          <p class="Index-itemTitle"><?php echo sprintf('%02d', $post->menu_order); ?></p>
+          <?php if ($pagination) { ?>
+          <p class="Index-itemTitle"><?php echo $pagination; ?></p>
+          <?php } ?>
         </a>
 
-      <?php } } ?>
+      <?php
+            }
+          }
+        }
+      }
+      ?>
 
       </div>
     </div>
