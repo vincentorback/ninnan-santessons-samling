@@ -20,7 +20,7 @@
   },
   "config": {
     "port": "3000",
-    "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/vendor/blazy.js assets/javascript/vendor/dragend.js assets/javascript/vendor/macy.js assets/javascript/main.js"
+    "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/vendor/blazy.js assets/javascript/vendor/waypoints.js assets/javascript/vendor/inview.js assets/javascript/vendor/dragend.js assets/javascript/vendor/macy.js assets/javascript/main.js"
   },
   "dependencies": {
     "jump.js": "^1.0.2",

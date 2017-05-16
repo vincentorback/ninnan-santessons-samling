@@ -14,6 +14,12 @@
 
 <body <?php body_class('Site-body'); ?>>
 
+  <?php if (!is_user_logged_in()) { ?>
+    <div class="Soon">
+      <p>Coming soon...</p>
+    </div>
+  <?php } else { ?>
+
   <nav class="Navigation js-nav" id="navigaiton" aria-expanded="false">
     <ul class="Navigation-list">
       <li class="Navigation-item">
@@ -54,5 +60,7 @@
         <p class="Intro-date">1891-1969</p>
       </div>
     </div>
-    <button class="Section-scrollDown" type="button">&darr;</button>
+    <a class="Section-scrollDown" href="#forord">&darr;</a>
   </header>
+
+  <?php } ?>

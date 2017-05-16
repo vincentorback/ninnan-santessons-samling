@@ -11,6 +11,7 @@
 @import "suitcss-components-grid";
 @import "suitcss-components-select";
 @import "components/chapter";
+@import "components/figure";
 @import "components/grid";
 @import "components/index";
 @import "components/intro";

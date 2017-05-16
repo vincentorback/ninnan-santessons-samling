@@ -1,0 +1,42 @@
+.Figure {
+  display: block;
+}
+
+.Figure-image {
+  margin: 0 auto;
+  display: block;
+}
+
+.Figure-caption {
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+
+.Figure:not(:last-child) {
+  margin-bottom: var(--site-spacing-sm);
+}
+
+@media (--xs-viewport) {
+  .Figure:not(:last-child) {
+    margin-bottom: var(--site-spacing-percent);
+  }
+}
+
+@media (--md-viewport) {
+  .Figure:not(:last-child) {
+    margin-bottom: var(--site-spacing-md);
+  }
+}
+
+@media (--lg-viewport) {
+  .Figure:not(:last-child) {
+    margin-bottom: var(--site-spacing-lg);
+  }
+}
+
+@media (--xl-viewport) {
+  .Figure:not(:last-child) {
+    margin-bottom: var(--site-spacing-xl);
+  }
+}

@@ -1,4 +1,8 @@
-<section class="Section--split Grid Grid--equalHeight">
+<?php
+$pagination = get_sub_field('paginering');
+?>
+
+<section class="Section--split Grid Grid--equalHeight js-chapterSection" data-pagination="<?php echo $pagination; ?>">
   <div class="Grid-cell u-md-size1of2">
     <div class="Section Section--white">
       <div class="Site-container">
@@ -13,21 +17,27 @@
   </div>
   <div class="Grid-cell u-md-size1of2">
     <?php
-    $images = get_sub_field('slideshow');
-    $imageCount = count($images);
+    $slideshow_images = get_sub_field('slideshow');
+    $imageCount = count($slideshow_images);
     $slideshow_id = uniqid();
     ?>
     <figure class="Slideshow Slideshow--sticky js-slideshow" id="<?php echo $slideshow_id; ?>" data-slides="<?php echo $imageCount; ?>" data-loaded="0">
-      <?php foreach( $images as $image ) { ?>
-      <div class="Slideshow-item dragend-page">
-        <img
-        class="Slideshow-itemImage js-lazy"
-        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        data-src="<?php echo $image['sizes']['large']; ?>"
-        <?php if ($imageCount > 1) { ?>data-slideshow="<?php echo $slideshow_id; ?>"<?php } ?>
-        alt="<?php echo $image['alt']; ?>">
+      <div class="Slideshow-slider js-slideshowSlider">
+        <?php foreach( $slideshow_images as $slideshow_image ) { ?>
+        <div class="Slideshow-item js-slideshowItem" data-caption="<?php echo $slideshow_image['caption']; ?>">
+          <img
+          class="Slideshow-itemImage js-lazy"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          data-src="<?php echo $slideshow_image['sizes']['large']; ?>"
+          <?php if ($imageCount > 1) { ?>data-slideshow="<?php echo $slideshow_id; ?>"<?php } ?>
+          alt="<?php echo $slideshow_image['alt']; ?>">
+        </div>
+        <?php } ?>
       </div>
-      <?php } ?>
+      <div class="Slideshow-info">
+        <div class="Slideshow-infoPagination js-slideshowPagination">1/<?php echo $imageCount; ?></div>
+        <div class="Slideshow-infoCredits js-slideshowCaption"><?php echo $slideshow_images[0]['caption']; ?></div>
+      </div>
     </figure>
   </div>
 </section>

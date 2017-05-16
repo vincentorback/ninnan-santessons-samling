@@ -1,14 +1,5 @@
-<?php
-$chapter_number = get_field('chapter_number');
-?>
-
-<div class="Chapter js-chapter" id="chapter_<?php echo $chapter_number; ?>">
-  <span class="Chapter-number">
-    <span class="Chapter-numberInner"><?php echo $chapter_number; ?></span>
-  </span>
-
+<div id="chapter_<?php echo $post->menu_order; ?>">
   <?php require('chapter/intro.php'); ?>
-
   <?php if( have_rows('chapter_content') ): ?>
     <?php while ( have_rows('chapter_content') ) : the_row();
       if ( get_row_layout() == 'text' ) {
@@ -19,7 +10,5 @@ $chapter_number = get_field('chapter_number');
         require('chapter/images.php');
       }
     endwhile; ?>
-
   <?php endif; ?>
-
 </div>

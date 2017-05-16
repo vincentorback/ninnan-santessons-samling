@@ -1,25 +1,35 @@
 <?php get_header(); ?>
-
+<?php if (is_user_logged_in()) { ?>
 
   <!-- Förord -->
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <?php require('templates/text.php'); ?>
-  <?php endwhile; endif; wp_reset_query(); ?>
+  <?php require_once('templates/forewords.php'); ?>
 
 
   <!-- Kapitel -->
-  <?php
-  $args = array(
-    'post_type' => 'chapter',
-    'order' => 'ASC',
-    'orderby' => 'menu_order',
-    'posts_per_page' => -1
-  );
-  $post_query = new WP_Query($args);
+  <div class="Chapters">
+    <?php
+    $args = array(
+      'post_type' => 'chapter',
+      'order' => 'ASC',
+      'orderby' => 'menu_order',
+      'posts_per_page' => -1
+    );
+    $post_query = new WP_Query($args);
 
-  if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
-    require('templates/chapter.php');
-  endwhile; endif; ?>
+    $start_pagination = get_field('chapter_pagination', $post_query->posts[0]->ID);
+    ?>
+    <span class="Chapters-pagination">
+      <span class="Chapters-paginationInner js-chapterPagination"><?php echo $start_pagination; ?></span>
+    </span>
+
+    <?php if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
+      require('templates/chapter.php');
+    endwhile; endif; ?>
+  </div>
+
+
+  <!-- Efterord -->
+  <?php require_once('templates/afterwords.php'); ?>
 
 
   <!-- Om projektet -->
@@ -29,5 +39,5 @@
   <!-- Index -->
   <?php require_once('templates/index.php'); ?>
 
-
+<?php } ?>
 <?php get_footer(); ?>

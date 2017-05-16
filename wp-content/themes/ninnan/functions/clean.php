@@ -15,12 +15,18 @@ add_filter( 'show_admin_bar', '__return_false' );
  * @link https://codex.wordpress.org/Function_Reference/remove_menu_page
  */
 add_action( 'admin_head', function () {
+
+  // Remove Posts
+  remove_menu_page( 'edit.php' );
+
+  // Remove Comments
+  remove_menu_page( 'edit-comments.php' );
+
+
+
   if ( ! current_user_can( 'administrator' ) ) {
     // Remove Dashboard
     remove_menu_page( 'index.php' );
-
-    // Remove Posts
-    remove_menu_page( 'edit.php' );
 
     // Remove Posts -> Categories
     remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
@@ -29,12 +35,6 @@ add_action( 'admin_head', function () {
 
     // Remove Media
     remove_menu_page( 'upload.php' );
-
-    // Remove Pages
-    remove_menu_page( 'edit.php?post_type=page' );
-
-    // Remove Comments
-    remove_menu_page( 'edit-comments.php' );
 
     // Remove Appearance
     remove_menu_page( 'themes.php' );

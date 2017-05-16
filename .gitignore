@@ -1,6 +1,6 @@
 wp-config.php
 
-wp/
+wp
 !wp/.gitkeep
 
 wp-content/plugins
@@ -10,3 +10,5 @@ wp-content/uploads
 !wp-content/uploads/.gitkeep
 
 node_modules
+
+.DS_Store

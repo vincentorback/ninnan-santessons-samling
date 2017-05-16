@@ -1,5 +1,20 @@
 .Slideshow {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
   background: var(--color-gray);
+}
+
+.Slideshow.is-active {
+  cursor: grab;
+}
+
+.Slideshow.is-active:active {
+  cursor: grabbing;
+}
+
+.Slideshow-slider {
+  width: 100%;
 }
 
 .Slideshow-item {
@@ -14,16 +29,83 @@
   max-width: 90%;
 }
 
+.Slideshow-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+
+  color: #fff;
+  font-size: 1.5em;
+
+  opacity: .9;
+}
+
+
+.Slideshow-buttonNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 44px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Slideshow-buttonNavItem {
+  width: 44px;
+  height: 44px;
+  display: block;
+  background: transparent;
+  outline: none;
+}
+
+.Slideshow-buttonNavItemInner {
+  display: block;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  transition: background 300ms ease;
+}
+
+.Slideshow-buttonNavItem:focus {
+  outline: none;
+}
+
+.Slideshow-buttonNavItem:focus .Slideshow-buttonNavItemInner {
+  background: rgba(255, 255, 255, .5);
+}
+
+.Slideshow-buttonNavItem.is-active .Slideshow-buttonNavItemInner {
+  background: #fff;
+}
+
+.Slideshow-buttonNavItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+
 
 @media (--md-viewport) {
-  .Slideshow--sticky {
+  .Slideshow--sticky .Slideshow {
     position: sticky;
     top: 0;
-
     min-height: 500px;
     height: 100vh;
     width: 100%;
-    background: var(--color-gray);
+  }
+
+  .Slideshow--sticky .Slideshow-slider {
+    min-height: 500px;
+    height: 100vh;
+    width: 100%;
   }
 
   .Slideshow--sticky .Slideshow-item {
@@ -35,4 +117,13 @@
     margin: auto;
     max-height: 100vh;
   }
+}
+
+
+/* TODO: Javascript figure out biggest image ? */
+.Slideshow--small,
+.Slideshow--small .Slideshow-slider {
+  max-width: 500px;
+  height: 500px;
+  overflow: hidden;
 }

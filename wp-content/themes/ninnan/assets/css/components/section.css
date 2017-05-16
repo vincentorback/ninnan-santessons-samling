@@ -123,21 +123,6 @@
   text-align: center;
 }
 
-.Section--images img {
-  display: block;
-  margin: 0 auto;
-}
-
-.Section--images img:not(:last-child) {
-  margin-bottom: 5vw;
-}
-
-
-
-.Section-image {
-  max-height: 100vh;
-  margin: 0 auto;
-}
 
 
 .Section--about,
