@@ -10,6 +10,10 @@
   font-weight: var(--font-bold);
 }
 
+.u-textUppercase {
+  text-transform: uppercase;
+}
+
 /**
  * Text truncation
  *
@@ -41,4 +45,9 @@
 
 .no-js .u-noJsHide {
   display: none;
+}
+
+
+.u-size1of1 {
+  width: 100%;
 }

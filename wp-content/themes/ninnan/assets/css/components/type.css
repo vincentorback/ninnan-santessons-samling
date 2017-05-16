@@ -163,7 +163,6 @@
 /* Blockquote */
 
 .Type blockquote {
-  font-style: italic;
   font-size: 1.3em;
   margin: 0;
   padding: 0 var(--Type-spacing);

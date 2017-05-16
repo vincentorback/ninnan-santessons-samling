@@ -15,6 +15,7 @@
 
 .Slideshow-slider {
   width: 100%;
+  overflow: hidden;
 }
 
 .Slideshow-item {
@@ -49,8 +50,10 @@
 .Slideshow-buttonNav {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 15px;
   bottom: 0;
+  z-index: 2;
+
   margin: auto;
   width: 44px;
 
@@ -71,8 +74,8 @@
   display: block;
   border: 2px solid #fff;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   transition: background 300ms ease;
 }
 
@@ -88,13 +91,9 @@
   background: #fff;
 }
 
-.Slideshow-buttonNavItem:not(:last-child) {
-  margin-bottom: 20px;
-}
-
 
 @media (--md-viewport) {
-  .Slideshow--sticky .Slideshow {
+  .Slideshow--sticky {
     position: sticky;
     top: 0;
     min-height: 500px;
@@ -121,9 +120,11 @@
 
 
 /* TODO: Javascript figure out biggest image ? */
+.Slideshow--small {
+  box-shadow: inset rgba(0, 0, 0, .1) 0 0 20px;
+}
+
 .Slideshow--small,
 .Slideshow--small .Slideshow-slider {
-  max-width: 500px;
-  height: 500px;
-  overflow: hidden;
+  max-height: 100vh;
 }

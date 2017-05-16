@@ -2,15 +2,19 @@
 $pagination = get_sub_field('paginering');
 ?>
 
-<section class="Section--split Grid Grid--equalHeight js-chapterSection" data-pagination="<?php echo $pagination; ?>">
+<section class="Section Section--letter Grid Grid--equalHeight js-chapterSection" data-pagination="<?php echo $pagination; ?>">
   <div class="Grid-cell u-md-size1of2">
-    <div class="Section Section--white">
-      <div class="Site-container">
+    <div class="u-size1of1">
+      <div class="Section Section--white Section--small">
         <?php if (get_sub_field('text_title')) { ?>
         <h1 class="Section-title"><?php the_sub_field('text_title'); ?></h1>
         <?php } ?>
-        <div class="Type">
-          <?php the_sub_field('text'); ?>
+      </div>
+      <div class="Section Section--white">
+        <div class="Section-text">
+          <div class="Type">
+            <?php the_sub_field('text'); ?>
+          </div>
         </div>
       </div>
     </div>
@@ -22,8 +26,9 @@ $pagination = get_sub_field('paginering');
     $slideshow_id = uniqid();
     ?>
     <figure class="Slideshow Slideshow--sticky js-slideshow" id="<?php echo $slideshow_id; ?>" data-slides="<?php echo $imageCount; ?>" data-loaded="0">
+      <?php if ($slideshow_images) { ?>
       <div class="Slideshow-slider js-slideshowSlider">
-        <?php foreach( $slideshow_images as $slideshow_image ) { ?>
+        <?php foreach ($slideshow_images as $slideshow_image) { ?>
         <div class="Slideshow-item js-slideshowItem" data-caption="<?php echo $slideshow_image['caption']; ?>">
           <img
           class="Slideshow-itemImage js-lazy"
@@ -38,6 +43,7 @@ $pagination = get_sub_field('paginering');
         <div class="Slideshow-infoPagination js-slideshowPagination">1/<?php echo $imageCount; ?></div>
         <div class="Slideshow-infoCredits js-slideshowCaption"><?php echo $slideshow_images[0]['caption']; ?></div>
       </div>
+      <?php } ?>
     </figure>
   </div>
 </section>

@@ -1,9 +1,8 @@
-/* global Blazy, Macy, Dragend, Waypoint */
+/* global Blazy, Dragend, Waypoint, MoveTo */
 
 (function (window) {
   function init () {
     var doc = window.document
-    var viewportWidth = Math.max(doc.documentElement.clientWidth, window.innerWidth || 0)
     var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
     var activeClass = 'is-active'
     var loadedClass = 'is-loaded'
@@ -38,8 +37,7 @@
       })
     }
 
-    /* Lazy images */
-
+    /* Lazy images + Slideshows */
     var slideshows = []
     var slideshowPaginationSelector = '.js-slideshowPagination'
     var slideshowCaptionSelector = '.js-slideshowCaption'
@@ -131,21 +129,21 @@
       }
     })
 
-    /* Masonry */
-    var macyEl = doc.querySelector('.js-masonry')
-    if (macyEl) {
-      Macy({
-        columns: 3,
-        container: macyEl.getAttribute('data-container'),
-        trueOrder: false,
-        margin: Math.round(viewportWidth * 0.05),
-        waitForImages: true,
-        breakAt: {
-          1000: 2,
-          600: 1
+    /* scrollButtons */
+    var scrollButtons = doc.querySelectorAll('.js-scrollButton')
+    var moveTo = new MoveTo({
+      duration: 800
+    })
+
+    Array.from(scrollButtons, function (buttonEl) {
+      buttonEl.addEventListener('click', function (e) {
+        var targetEl = doc.getElementById(buttonEl.getAttribute('data-target'))
+        if (targetEl) {
+          moveTo.move(targetEl)
         }
+        e.preventDefault()
       })
-    }
+    })
 
     /* Chapters */
     var chapterSections = doc.querySelectorAll('.js-chapterSection')

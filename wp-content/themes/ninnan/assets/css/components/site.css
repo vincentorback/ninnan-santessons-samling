@@ -13,9 +13,9 @@
   margin: 0 auto;
 }
 
-@media (--sm-viewport) {
+@media (--md-viewport) {
   .Site-container {
-    width: calc(100% - 150px);
+    width: calc(100% - 180px);
   }
 }
 

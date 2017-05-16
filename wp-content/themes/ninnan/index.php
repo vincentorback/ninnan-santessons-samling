@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <?php if (is_user_logged_in()) { ?>
 
+
   <!-- Förord -->
   <?php require_once('templates/forewords.php'); ?>
 
@@ -38,6 +39,7 @@
 
   <!-- Index -->
   <?php require_once('templates/index.php'); ?>
+
 
 <?php } ?>
 <?php get_footer(); ?>

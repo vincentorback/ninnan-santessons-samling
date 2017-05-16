@@ -2,12 +2,14 @@
 $about_page = get_page_by_title('Om projektet');
 if ($about_page) {
 ?>
-<section class="Section--gray Section--about" id="about">
-  <div class="Grid Grid--equalHeight">
-    <div class="Grid-cell u-md-size2of3">
-      <div class="Section">
-        <div class="Site-container">
-          <h1 class="Section-title">Om projektet</h1>
+<section class="Section Section--gray Section--about" id="about">
+
+  <div class="Site-container">
+    <h1 class="Section-title">Om projektet</h1>
+
+    <div class="Grid Grid--equalHeight">
+      <div class="Grid-cell u-md-size2of3">
+        <div class="Section">
           <div class="Type">
             <?php echo apply_filters('the_content', $about_page->post_content); ?>
           </div>
@@ -45,14 +47,12 @@ if ($about_page) {
           <?php } ?>
         </div>
       </div>
-    </div>
-    <div class="Grid-cell u-md-size1of3">
-      <div class="Section">
-        <div class="Site-container">
-          <div class="Type">
-            <h1>Tack till</h1>
-
-            <?php the_field('thanks', $about_page->ID); ?>
+      <div class="Grid-cell u-md-size1of3">
+        <div class="Section">
+          <div class="Site-container">
+            <div class="Type">
+              <?php the_field('thanks', $about_page->ID); ?>
+            </div>
           </div>
         </div>
       </div>

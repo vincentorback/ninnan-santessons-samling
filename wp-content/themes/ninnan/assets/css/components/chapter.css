@@ -1,7 +1,7 @@
 .Chapters {
   position: relative;
   z-index: 1;
-  background: red;
+  /*background: red;*/
 }
 
 .Chapters-pagination {

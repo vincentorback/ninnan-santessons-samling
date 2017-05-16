@@ -60,7 +60,7 @@
         <p class="Intro-date">1891-1969</p>
       </div>
     </div>
-    <a class="Section-scrollDown" href="#forord">&darr;</a>
+    <a class="Section-scrollDown js-scrollButton" href="#forord" data-target="forord">&darr;</a>
   </header>
 
   <?php } ?>

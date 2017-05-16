@@ -12,6 +12,7 @@
   display: block;
   margin: 0 auto;
   transition: opacity 200ms ease;
+  backface-visibility: hidden;
 }
 
 .Index-itemContent {
@@ -35,6 +36,7 @@
 
   opacity: 0;
   transition: opacity 200ms ease;
+  backface-visibility: hidden;
 }
 
 .Index-itemTitle {
