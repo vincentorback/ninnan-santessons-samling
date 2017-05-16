@@ -12,9 +12,7 @@ Author: Vincent Orback
 @import "base/fonts";
 
 /* Components */
-@import "suitcss-components-button";
 @import "suitcss-components-grid";
-@import "suitcss-components-select";
 @import "components/chapters";
 @import "components/figure";
 @import "components/grid";
@@ -27,9 +25,7 @@ Author: Vincent Orback
 @import "components/type";
 
 /* Utilities */
-@import "suitcss-utils-display";
 @import "suitcss-utils-size";
-@import "suitcss-utils-text";
 @import "utilities/misc";
 
 /* Print */

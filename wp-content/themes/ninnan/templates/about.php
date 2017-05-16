@@ -35,6 +35,7 @@ if ($about_page) {
               <?php } ?>
             </div>
 
+            <?php if ($imageCount > 1) { ?>
             <div class="Slideshow-buttonNav js-slideshowNav">
             <?php foreach( $images as $key=>$value ) { ?>
               <button class="Slideshow-buttonNavItem js-slideshowNavItem" data-index="<?php echo $key + 1; ?>">
@@ -42,6 +43,7 @@ if ($about_page) {
               </button>
             <?php } ?>
             </div>
+            <?php } ?>
 
           </figure>
           <?php } ?>

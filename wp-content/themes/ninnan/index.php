@@ -23,9 +23,15 @@
       <span class="Chapters-paginationInner js-chapterPagination"><?php echo $start_pagination; ?></span>
     </span>
 
-    <?php if ($post_query->have_posts()) : while ($post_query->have_posts()) : $post_query->the_post();
-      require('templates/chapter.php');
-    endwhile; endif; ?>
+    <?php
+    if ($post_query->have_posts()) {
+      while ($post_query->have_posts()) {
+        $post_query->the_post();
+
+        require('templates/chapter.php');
+      }
+    }
+    ?>
   </div>
 
 

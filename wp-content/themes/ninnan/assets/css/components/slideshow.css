@@ -2,10 +2,13 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+
   background: var(--color-gray);
+  color: #fff;
 }
 
 .Slideshow.is-active {
+  cursor: move;
   cursor: grab;
 }
 
@@ -13,10 +16,12 @@
   cursor: grabbing;
 }
 
+
 .Slideshow-slider {
   width: 100%;
   overflow: hidden;
 }
+
 
 .Slideshow-item {
   overflow: hidden;
@@ -27,7 +32,6 @@
 
 .Slideshow-itemImage {
   display: block;
-  max-width: 90%;
 }
 
 .Slideshow-info {
@@ -40,7 +44,6 @@
   justify-content: space-between;
   padding: 1em;
 
-  color: #fff;
   font-size: 1.5em;
 
   opacity: .9;
@@ -130,6 +133,7 @@
 }
 
 .Slideshow--small,
-.Slideshow--small .Slideshow-slider {
+.Slideshow--small .Slideshow-slider,
+.Slideshow--small .Slideshow-itemImage {
   max-height: 100vh;
 }

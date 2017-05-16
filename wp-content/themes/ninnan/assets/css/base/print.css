@@ -11,4 +11,41 @@
     border: 0 !important;
     font-size: 1em;
   }
+
+  .Navigation,
+  .Slideshow-buttonNav,
+  .Section--index,
+  .Section-scrollDown {
+    display: none;
+  }
+
+  .Slideshow-info {
+    position: static;
+  }
+
+  .Section--intro,
+  .Section-chapterIntro,
+  .Section--about,
+  .Section--images,
+  .Section--letter,
+  .Section--text {
+    page-break-before: always;
+  }
+
+  .Intro {
+    justify-content: center;
+  }
+
+  .Slideshow-item {
+    display: block;
+
+  }
+
+  img {
+    max-height: 90vh;
+  }
+
+  .Intro-date {
+    align-self: left;
+  }
 }

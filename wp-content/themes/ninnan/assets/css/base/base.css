@@ -10,15 +10,11 @@ html {
 
 body,
 blockquote,
-dl,
-dd,
 h1,
 h2,
 h3,
 figure,
 p,
-pre,
-form,
 ol,
 ul {
   margin: 0;
@@ -59,10 +55,6 @@ img {
 ol,
 ul {
   list-style: none;
-}
-
-abbr {
-  cursor: help;
 }
 
 /**

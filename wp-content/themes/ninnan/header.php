@@ -14,13 +14,23 @@
 
 <body <?php body_class('Site-body'); ?>>
 
-  <?php if (!is_user_logged_in()) { ?>
+  <?php if (!is_user_logged_in() && !is_404()) { ?>
     <div class="Soon">
       <p>Coming soon...</p>
     </div>
-  <?php } else { ?>
+  <?php } else if (!is_404()) { ?>
 
-  <nav class="Navigation js-nav" id="navigaiton" aria-expanded="false">
+  <header class="Section Section--intro Section--gray" role="banner">
+    <div class="Site-container">
+      <div class="Intro">
+        <h1 class="Intro-title">Ninnan Santesson</h1>
+        <p class="Intro-date">1891-1969</p>
+      </div>
+    </div>
+    <a class="Section-scrollDown js-scrollButton" href="#forord" data-target="forord">&darr;</a>
+  </header>
+
+  <nav class="Navigation js-nav" id="navigaiton" aria-expanded="false" role="navigation">
     <ul class="Navigation-list">
       <li class="Navigation-item">
         <a class="Navigation-link" href="#index">
@@ -44,23 +54,13 @@
       </li>
     </ul>
 
-    <button class="Navigation-close js-navClose" type="button" aria-controlls="navigation">
+    <button class="Navigation-close js-navToggle" type="button" aria-controlls="navigation" role="button">
       &#10005;
     </button>
 
-    <button class="Navigation-open js-navToggle" type="button" aria-controlls="navigation">
+    <button class="Navigation-open js-navToggle" type="button" aria-controlls="navigation" role="button">
       <span class="Navigation-openText">Meny</span>
     </button>
   </nav>
-
-  <header class="Section Section--intro Section--gray">
-    <div class="Site-container">
-      <div class="Intro">
-        <h1 class="Intro-title">Ninnan Santesson</h1>
-        <p class="Intro-date">1891-1969</p>
-      </div>
-    </div>
-    <a class="Section-scrollDown js-scrollButton" href="#forord" data-target="forord">&darr;</a>
-  </header>
 
   <?php } ?>

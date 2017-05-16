@@ -82,19 +82,17 @@
 
 .Type a {
   outline: 0;
-  border-bottom: 1px dotted currentColor;
+  text-decoration: underline;
 }
 
 .Type a:hover,
 .Type a:focus,
-.Type a:active {
-  color: #000;
-  border-bottom-style: solid;
+.Type a[href^="http"]:visited {
+  opacity: .7;
 }
 
-.Type a:active,
-.Type a[href^="http"]:visited {
-  color: var(--color-gray);
+.Type a:active {
+  opacity: .4;
 }
 
 
@@ -153,7 +151,7 @@
   height: 1px;
   border: 0;
   width: 100%;
-  background: var(--color-gray);
+  background: currentColor;
   margin: calc(var(--Type-spacing) * 2) auto;
   transform: rotate(-1deg);
   transform-origin: top center;

@@ -1,13 +1,17 @@
 <?php
 $pagination = get_sub_field('paginering');
+$title = get_sub_field('text_title')
 ?>
 
-<section class="Section Section--letter Grid Grid--equalHeight js-chapterSection" data-pagination="<?php echo $pagination; ?>">
+<section
+  class="Section Section--letter Grid Grid--equalHeight js-chapterSection"
+  data-pagination="<?php echo $pagination; ?>"
+  id="<?php echo $pagination; ?>-<?php echo urlencode($title); ?>">
   <div class="Grid-cell u-md-size1of2">
     <div class="u-size1of1">
       <div class="Section Section--white Section--small">
-        <?php if (get_sub_field('text_title')) { ?>
-        <h1 class="Section-title"><?php the_sub_field('text_title'); ?></h1>
+        <?php if ($title) { ?>
+        <h1 class="Section-title"><?php echo $title; ?></h1>
         <?php } ?>
       </div>
       <div class="Section Section--white">

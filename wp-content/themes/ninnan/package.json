@@ -8,37 +8,28 @@
     "url": "https://github.com/vincentorback/ninnan.git"
   },
   "scripts": {
-    "start": "parallelshell 'npm run watch' 'npm run serve'",
+    "start": "parallelshell 'npm run watch'",
     "build:js": "uglifyjs $npm_package_config_js_files -o assets/javascript/main-min.js --screw-ie8 --comments",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/style-min.css assets/css/style.css",
     "build:deploy": "npm run lint:js && npm run build:js && npm run build:css",
     "lint:js": "standard 'assets/javascript/**/*.js'",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css'",
     "watch:js": "eye --*glob=assets/javascript/**/*.js,%**/*-min.js npm run lint:js and npm run build:js",
-    "watch:css": "eye --*glob=assets/css/**/*.css,%**/*-min.css npm run build:css",
-    "serve": "ws -c -d ./ -p $npm_package_config_port"
+    "watch:css": "eye --*glob=assets/css/**/*.css,%**/*-min.css npm run build:css"
   },
   "config": {
-    "port": "3000",
     "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/vendor/moveTo.js assets/javascript/vendor/blazy.js assets/javascript/vendor/waypoints.js assets/javascript/vendor/inview.js assets/javascript/vendor/dragend.js assets/javascript/vendor/macy.js assets/javascript/main.js"
   },
   "dependencies": {
-    "jump.js": "^1.0.2",
-    "macy": "^2.0.0",
     "normalize.css": "^7.0.0",
-    "suitcss-utils-display": "^1.0.2",
     "suitcss-utils-size": "^2.0.0",
-    "suitcss-utils-text": "^1.0.0",
-    "suitcss-components-button": "^6.0.0",
-    "suitcss-components-grid": "^3.0.3",
-    "suitcss-components-select": "^1.0.0"
+    "suitcss-components-grid": "^3.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.0",
     "copyfiles": "^1.2.0",
     "csswring": "^6.0.0",
     "eye": "^0.0.3",
-    "local-web-server": "^1.2.7",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^4.0.0",
     "postcss-cssnext": "^2.11.0",
@@ -47,7 +38,7 @@
     "standard": "^10.0.2",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
-    "uglify-js": "^3.0.5"
+    "uglify-js": "^3.0.7"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",

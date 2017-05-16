@@ -2,7 +2,7 @@
 $afterwords_page = get_page_by_title('Efterord');
 if ($afterwords_page) {
 ?>
-<section class="Section">
+<section class="Section Section--text">
   <div class="Site-container Site-container--narrow">
     <h1 class="Section-title">Efterord</h1>
     <div class="Type">

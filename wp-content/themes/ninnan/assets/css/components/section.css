@@ -55,10 +55,6 @@
   text-align: center;
 }
 
-@media (min-height: 800px) {
-
-}
-
 
 
 .Section-chapterIntro {
@@ -103,19 +99,22 @@
   padding: 0;
 }
 
+
 .Section--gray {
   background: var(--color-gray);
-  color: #fff;
 }
 
 .Section--black {
   background: var(--color-black);
+}
+
+.Section--gray,
+.Section--black {
   color: #fff;
 }
 
 .Section--white {
   background: #fff;
-  color: var(--color-black);
 }
 
 

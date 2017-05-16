@@ -1,53 +1,5 @@
 /** @define utilities */
 
-/* Text */
-
-.u-textNormal {
-  font-weight: var(--font-normal);
-}
-
-.u-textBold {
-  font-weight: var(--font-bold);
-}
-
-.u-textUppercase {
-  text-transform: uppercase;
-}
-
-/**
- * Text truncation
- *
- * Prevent text from wrapping onto multiple lines, and truncate with an
- * ellipsis.
- *
- * 1. Ensure that the node has a maximum width after which truncation can
- *    occur.
- * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
- *    nodes.
- */
-
-.u-textTruncate {
-  max-width: 100%; /* 1 */
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
-  word-wrap: normal !important; /* 2 */
-}
-
-
-/* Display */
-
-@media (--sm-max-viewport) {
-  .u-hideSmall {
-    display: none;
-  }
-}
-
-.no-js .u-noJsHide {
-  display: none;
-}
-
-
 .u-size1of1 {
   width: 100%;
 }
