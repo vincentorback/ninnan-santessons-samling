@@ -39,7 +39,7 @@ a {
 
 strong,
 b {
-  font-weight: var(--font-bold);
+  font-weight: 600;
 }
 
 i,
@@ -50,6 +50,15 @@ em {
 img {
   max-width: 100%;
   height: auto;
+}
+
+html.js img.js-lazy {
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+html.js img.is-loaded {
+  opacity: 1;
 }
 
 ol,

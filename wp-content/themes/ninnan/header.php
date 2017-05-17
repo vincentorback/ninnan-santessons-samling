@@ -1,7 +1,6 @@
 <!doctype html>
 <?php $theme_url = get_template_directory_uri(); ?>
-<!--[if lte IE 9]><html class="Site no-js lte-ie9" lang="sv"><![endif]-->
-<!--[if gt IE 9]><!--><html class="Site no-js" lang="sv"><!--<![endif]-->
+<html class="Site no-js" lang="sv">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +46,7 @@
     </a>
   </header>
 
-  <nav class="Navigation js-nav" id="navigaiton" aria-expanded="false" role="navigation">
+  <nav class="Navigation js-nav" id="navigation" aria-expanded="false" role="navigation">
     <ul class="Navigation-list">
       <li class="Navigation-item">
         <a class="Navigation-link" href="#index">
@@ -72,11 +71,11 @@
       <?php } ?>
     </ul>
 
-    <button class="Navigation-close js-navToggle" type="button" aria-controls="navigation" type="button">
+    <button class="Navigation-close js-navToggle" type="button" aria-controls="navigation">
       <span class="Navigation-closeText">&#10005;</span>
     </button>
 
-    <button class="Navigation-open js-navToggle" type="button" aria-controls="navigation" type="button">
+    <button class="Navigation-open js-navToggle" type="button" aria-controls="navigation">
       <span class="Navigation-openText">Meny</span>
     </button>
   </nav>

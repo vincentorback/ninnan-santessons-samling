@@ -83,7 +83,7 @@
 }
 
 .Navigation-open:hover .Navigation-openText {
-  opacity: .7;
+  opacity: .2;
 }
 
 @media (--md-viewport) {
@@ -119,7 +119,7 @@
 }
 
 .Navigation-close:hover .Navigation-closeText {
-  opacity: .7;
+  opacity: .2;
 }
 
 

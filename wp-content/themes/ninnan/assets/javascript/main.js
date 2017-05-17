@@ -22,6 +22,10 @@
 
       Array.from(hashLinks, function (linkEl) {
         linkEl.addEventListener('click', function (e) {
+          if (e.metaKey || e.ctrlKey) {
+            return
+          }
+
           var href = linkEl.getAttribute('href')
           var targetEl = doc.querySelector(href.substring(href.indexOf('#')))
 
@@ -59,7 +63,11 @@
         })
 
         Array.from(navLinks, function (navLink) {
-          navLink.addEventListener('click', function () {
+          navLink.addEventListener('click', function (e) {
+            if (e.metaKey || e.ctrlKey) {
+              return
+            }
+
             toggleNav()
           })
         })

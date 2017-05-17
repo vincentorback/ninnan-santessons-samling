@@ -16,7 +16,6 @@
 
   font-size: 2em;
   line-height: 1;
-  font-weight: var(--font-bold);
   text-transform: uppercase;
   backface-visibility: hidden;
 }
