@@ -4,22 +4,17 @@
   'use strict'
 
   var doc = window.document
-  var viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
   var activeClass = 'is-active'
   var loadedClass = 'is-loaded'
   var errorClass = 'is-error'
 
-  var ninnan = {
+  var Ninnan = {
     init: function () {
-      ninnan.navigation()
-      ninnan.images()
-      ninnan.scrollButtons()
-      ninnan.chapters()
-      ninnan.linkJump()
-
-      window.addEventListener('resize', function () {
-        viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-      })
+      Ninnan.navigation()
+      Ninnan.lazyImages()
+      Ninnan.scrollButtons()
+      Ninnan.chapters()
+      Ninnan.linkJump()
     },
 
     linkJump: function () {
@@ -35,7 +30,7 @@
 
             window.setTimeout(function () {
               targetEl.scrollIntoView()
-            }, 100)
+            }, 200)
 
             e.preventDefault()
           }
@@ -46,8 +41,8 @@
     navigation: function () {
       var navEl = doc.querySelector('.js-nav')
 
-      function toggleNav (state) {
-        navEl.classList.toggle(activeClass, state)
+      function toggleNav () {
+        navEl.classList.toggle(activeClass)
         navEl.setAttribute('aria-expanded', !navEl.classList.contains(activeClass))
       }
 
@@ -65,13 +60,13 @@
 
         Array.from(navLinks, function (navLink) {
           navLink.addEventListener('click', function () {
-            toggleNav(false)
+            toggleNav()
           })
         })
       }
     },
 
-    images: function () {
+    lazyImages: function () {
       var slideshows = {}
       var lazySelector = '.js-lazy'
       var paginationSelector = '.js-slideshowPagination'
@@ -79,6 +74,8 @@
       var itemSelector = '.js-slideshowItem'
       var sliderSelector = '.js-slideshowSlider'
       var captionText = ''
+      var reversedClass = 'is-reversed'
+      var viewportHeight = Math.max(doc.documentElement.clientHeight, window.innerHeight || 0)
 
       var lazyImages = new Blazy({
         offset: viewportHeight,
@@ -89,7 +86,7 @@
           var slideshowId = loadedImage.getAttribute('data-slideshow')
 
           if (slideshowId) {
-            var slideshowEl = document.getElementById(slideshowId)
+            var slideshowEl = doc.getElementById(slideshowId)
 
             if (!slideshowEl) {
               return
@@ -108,7 +105,6 @@
 
               if (slides > 1) {
                 window.setTimeout(function () {
-                  // Force load
                   var notLoaded = Array.from(slideshowEl.querySelectorAll(lazySelector + ':not(.' + loadedClass + ')'))
 
                   notLoaded = notLoaded.filter(function (notLoadedImage) {
@@ -183,17 +179,17 @@
 
                   Waypoint.refreshAll()
                 },
-                onSwipeEnd: function (slider, slide) {
+                onSwipeEnd: function (sliderEl, slideEl) {
                   var slideshow = this
 
-                  slideshowLeftButton.classList.toggle('is-reversed', slideshow.page === 0)
-                  slideshowRightButton.classList.toggle('is-reversed', (slideshow.page + 1) === slideshow.pagesCount)
+                  slideshowLeftButton.classList.toggle(reversedClass, slideshow.page === 0)
+                  slideshowRightButton.classList.toggle(reversedClass, (slideshow.page + 1) === slideshow.pagesCount)
 
                   if (paginationEl) {
                     paginationEl.innerText = (slideshow.page + 1) + '/' + slideshow.pagesCount
                   }
 
-                  captionText = slide.getAttribute('data-caption') || ''
+                  captionText = slideEl.getAttribute('data-caption') || ''
 
                   if (captionEl) {
                     captionEl.innerText = captionText
@@ -228,6 +224,10 @@
           Waypoint.refreshAll()
         }
       })
+
+      window.addEventListener('resize', function () {
+        viewportHeight = Math.max(doc.documentElement.clientHeight, window.innerHeight || 0)
+      })
     },
 
     scrollButtons: function () {
@@ -251,29 +251,31 @@
 
     chapters: function () {
       var chapterSections = doc.querySelectorAll('.js-chapterSection')
-      var chapterPagination = doc.querySelector('.js-chapterPagination')
+      var paginationEl = doc.querySelector('.js-chapterPagination')
+      var defaultTitle = paginationEl.getAttribute('data-default')
 
-      Array.from(chapterSections, function (chapterSection) {
+      Array.from(chapterSections, function (sectionEl) {
         return new Waypoint({
-          element: chapterSection,
+          element: sectionEl,
           handler: function (direction) {
-            var paginationTitle = chapterPagination.getAttribute('data-default')
+            var paginationTitle = defaultTitle
 
             if (direction === 'down') {
               paginationTitle = this.element.getAttribute('data-pagination')
             } else {
               var previousWaypoint = this.previous()
+
               if (previousWaypoint) {
                 paginationTitle = previousWaypoint.element.getAttribute('data-pagination')
               }
             }
 
-            chapterPagination.innerText = paginationTitle
+            paginationEl.innerText = paginationTitle
           }
         })
       })
     }
   }
 
-  window.addEventListener('load', ninnan.init, false)
+  window.addEventListener('load', Ninnan.init, false)
 }(window))
