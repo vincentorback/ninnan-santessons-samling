@@ -8,6 +8,23 @@ add_filter( 'show_admin_bar', '__return_false' );
 
 
 
+/**
+ * Hide or create new menus and items in the admin bar.
+ * @link https://codex.wordpress.org/Class_Reference/WP_Admin_Bar/add_menu
+ *
+ * Indentation shows sub-items.
+ */
+add_action( 'admin_bar_menu', function ( $admin_bar ) {
+  $admin_bar->remove_menu( 'wp-logo' );          // Remove the WordPress logo
+  $admin_bar->remove_menu( 'updates' );          // Remove the updates link
+  $admin_bar->remove_menu( 'comments' );         // Remove the comments link
+  $admin_bar->remove_menu( 'new-content' );      // Remove the content link
+}, 999);
+
+
+
+
+
 
 /**
  * Hide admin menu items. Can be both parents and children in dropdowns.
@@ -131,9 +148,6 @@ add_action( 'init', function () {
 
   // Remove the displayed XHTML generator
   remove_action( 'wp_head', 'wp_generator' );
-
-  // Remove the REST API link tag
-  remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
 });
 
 
@@ -163,4 +177,22 @@ add_action( 'init', function () {
 
     return array();
   });
+});
+
+
+
+
+/**
+ * Change default TinyMCE WYSIWYG settings.
+ * @link https://codex.wordpress.org/TinyMCE
+ *
+ * @param $settings Object Array of TinyMCE settings
+ */
+add_filter('tiny_mce_before_init', function ($settings) {
+  $settings['toolbar1'] = 'formatselect,bold,italic,blockquote,link,unlink,underline';
+  $settings['toolbar2'] = '';
+
+  $settings['block_formats'] = "Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3;";
+
+  return $settings;
 });

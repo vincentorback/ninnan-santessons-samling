@@ -1,15 +1,14 @@
 {
   "name": "ninnan-santessons-samling",
   "version": "1.0.0",
-  "description": "",
-  "homepage": "",
+  "homepage": "http://ninnan-santessons-samling.se",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vincentorback/ninnan.git"
+    "url": "https://github.com/vincentorback/ninnan-santessons-samling"
   },
   "scripts": {
     "start": "parallelshell 'npm run watch'",
-    "build:js": "uglifyjs $npm_package_config_js_files -o assets/javascript/main-min.js --screw-ie8 --comments",
+    "build:js": "uglifyjs $npm_package_config_js_files --screw-ie8 --comments -o assets/javascript/main-min.js",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/style-min.css assets/css/style.css",
     "build:deploy": "npm run lint:js && npm run build:js && npm run build:css",
     "lint:js": "standard 'assets/javascript/**/*.js'",
@@ -18,7 +17,7 @@
     "watch:css": "eye --*glob=assets/css/**/*.css,%**/*-min.css npm run build:css"
   },
   "config": {
-    "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/vendor/moveTo.js assets/javascript/vendor/blazy.js assets/javascript/vendor/waypoints.js assets/javascript/vendor/inview.js assets/javascript/vendor/dragend.js assets/javascript/vendor/macy.js assets/javascript/main.js"
+    "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/vendor/moveTo.js assets/javascript/vendor/blazy.js assets/javascript/vendor/waypoints.js assets/javascript/vendor/dragend.js assets/javascript/main.js"
   },
   "dependencies": {
     "normalize.css": "^7.0.0",

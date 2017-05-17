@@ -48,8 +48,8 @@
 
 
 .Navigation-linkInner {
-  border-bottom: 4px solid transparent;
-  transition: border 200ms ease;
+  border-bottom: 3px solid transparent;
+  transition: border-bottom-color 100ms ease;
 }
 
 .Navigation-link:hover .Navigation-linkInner {
@@ -76,6 +76,14 @@
   transform: translateX(100%);
   background: var(--color-black);
   outline: none;
+}
+
+.Navigation-openText {
+  transition: opacity 200ms ease;
+}
+
+.Navigation-open:hover .Navigation-openText {
+  opacity: .7;
 }
 
 @media (--md-viewport) {
@@ -105,7 +113,12 @@
   font-size: 3em;
 }
 
-.Navigation-close:hover {
+.Navigation-closeText {
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.Navigation-close:hover .Navigation-closeText {
   opacity: .7;
 }
 

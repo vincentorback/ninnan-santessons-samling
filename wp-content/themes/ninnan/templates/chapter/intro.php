@@ -7,7 +7,7 @@ $pagination = get_sub_field('paginering') ? get_sub_field('paginering') : get_fi
   data-pagination="<?php echo $pagination; ?>"
   id="<?php echo $pagination; ?>-<?php echo urlencode(the_title()); ?>">
   <div>
-    <p class="Section-chapterIntroTitle"><?php echo sprintf('%02d', $post->menu_order + 1); ?></p>
+    <p class="Section-chapterIntroTitle"><?php echo $pagination; ?></p>
     <h1 class="Section-chapterIntroTitle"><?php the_title(); ?></h1>
   </div>
   <!-- <a class="Section-scrollDown">&darr;</a> -->

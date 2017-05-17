@@ -13,7 +13,7 @@ Author: Vincent Orback
 
 /* Components */
 @import "suitcss-components-grid";
-@import "components/chapters";
+@import "components/page";
 @import "components/figure";
 @import "components/grid";
 @import "components/index";

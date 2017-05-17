@@ -7,7 +7,7 @@ if ($about_page) {
   <div class="Site-container">
     <h1 class="Section-title">Om projektet</h1>
 
-    <div class="Grid Grid--equalHeight">
+    <div class="Grid Grid--withGutter">
       <div class="Grid-cell u-md-size2of3">
         <div class="Section">
           <div class="Type">
@@ -36,6 +36,11 @@ if ($about_page) {
             </div>
 
             <?php if ($imageCount > 1) { ?>
+            <div class="Slideshow-nav">
+              <button class="Slideshow-navButton Slideshow-navButton--left is-reversed js-slideshowLeft" type="button">&larr;</button>
+              <button class="Slideshow-navButton Slideshow-navButton--right js-slideshowRight" type="button">&rarr;</button>
+            </div>
+
             <div class="Slideshow-buttonNav js-slideshowNav">
             <?php foreach( $images as $key=>$value ) { ?>
               <button class="Slideshow-buttonNavItem js-slideshowNavItem" data-index="<?php echo $key + 1; ?>">
@@ -51,7 +56,7 @@ if ($about_page) {
       </div>
       <div class="Grid-cell u-md-size1of3">
         <div class="Section">
-          <div class="Site-container">
+          <div class="Section-text">
             <div class="Type">
               <?php the_field('thanks', $about_page->ID); ?>
             </div>

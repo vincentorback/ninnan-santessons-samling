@@ -49,10 +49,15 @@
   right: 0;
   margin: auto;
 
-  font-size: 2em;
-  padding: 1em;
-  width: 100px;
+  width: 60px;
+  padding: 20px 10px 10px;
   text-align: center;
+
+  transition: transform 300ms ease;
+}
+
+.Section-scrollDown:hover {
+  transform: translateY(5px);
 }
 
 

@@ -43,6 +43,12 @@ $title = get_sub_field('text_title')
         </div>
         <?php } ?>
       </div>
+      <?php if ($imageCount > 1) { ?>
+      <div class="Slideshow-nav">
+        <button class="Slideshow-navButton Slideshow-navButton--left is-reversed js-slideshowLeft" type="button">&larr;</button>
+        <button class="Slideshow-navButton Slideshow-navButton--right js-slideshowRight" type="button">&rarr;</button>
+      </div>
+      <?php } ?>
       <div class="Slideshow-info">
         <div class="Slideshow-infoPagination js-slideshowPagination">1/<?php echo $imageCount; ?></div>
         <div class="Slideshow-infoCredits js-slideshowCaption"><?php echo $slideshow_images[0]['caption']; ?></div>

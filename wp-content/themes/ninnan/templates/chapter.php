@@ -1,4 +1,4 @@
-<div id="chapter_<?php echo $post->menu_order; ?>">
+<div id="chapter_<?php echo $chapter_number; ?>">
   <?php
   require('chapter/intro.php');
 

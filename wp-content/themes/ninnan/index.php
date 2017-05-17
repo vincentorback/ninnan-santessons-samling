@@ -7,7 +7,7 @@
 
 
   <!-- Kapitel -->
-  <div class="Chapters">
+  <div class="Page">
     <?php
     $args = array(
       'post_type' => 'chapter',
@@ -19,16 +19,19 @@
 
     $start_pagination = get_field('chapter_pagination', $post_query->posts[0]->ID);
     ?>
-    <span class="Chapters-pagination">
-      <span class="Chapters-paginationInner js-chapterPagination"><?php echo $start_pagination; ?></span>
+    <span class="Page-pagination">
+      <span class="Page-paginationInner js-chapterPagination" data-default="<?php echo $start_pagination; ?>"><?php echo $start_pagination; ?></span>
     </span>
 
     <?php
     if ($post_query->have_posts()) {
+      $chapter_number = 1;
       while ($post_query->have_posts()) {
         $post_query->the_post();
 
         require('templates/chapter.php');
+
+        $chapter_number++;
       }
     }
     ?>

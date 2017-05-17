@@ -1,4 +1,4 @@
-/* global Blazy, Dragend, Waypoint, MoveTo */
+/* global Modernizr, MoveTo, Blazy, Waypoint, Dragend  */
 
 (function (window) {
   'use strict'
@@ -28,9 +28,13 @@
       Array.from(hashLinks, function (linkEl) {
         linkEl.addEventListener('click', function (e) {
           var targetEl = doc.querySelector(linkEl.href.substring(linkEl.href.indexOf('#')))
+          targetEl.scrollIntoView()
+
           window.setTimeout(function () {
             targetEl.scrollIntoView()
           }, 100)
+
+          e.preventDefault()
         })
       })
     },
@@ -39,10 +43,8 @@
       var navEl = doc.querySelector('.js-nav')
 
       function toggleNav (state) {
-        state = state || !navEl.classList.contains(activeClass)
-
         navEl.classList.toggle(activeClass, state)
-        navEl.setAttribute('aria-expanded', state)
+        navEl.setAttribute('aria-expanded', !navEl.classList.contains(activeClass))
       }
 
       if (navEl) {
@@ -66,7 +68,7 @@
     },
 
     images: function () {
-      var slideshows = []
+      var slideshows = {}
       var lazySelector = '.js-lazy'
       var paginationSelector = '.js-slideshowPagination'
       var captionSelector = '.js-slideshowCaption'
@@ -74,41 +76,66 @@
       var sliderSelector = '.js-slideshowSlider'
       var captionText = ''
 
-      return new Blazy({
+      var lazyImages = new Blazy({
         offset: viewportHeight,
         selector: lazySelector,
         successClass: loadedClass,
         errorClass: errorClass,
-        success: function (imageEl) {
-          var slideshowId = imageEl.getAttribute('data-slideshow')
+        success: function (loadedImage) {
+          var slideshowId = loadedImage.getAttribute('data-slideshow')
 
           if (slideshowId) {
             var slideshowEl = document.getElementById(slideshowId)
-            var sliderEl = slideshowEl.querySelector(sliderSelector)
+
+            if (!slideshowEl) {
+              return
+            }
+
             var slides = parseInt(slideshowEl.getAttribute('data-slides'))
-            var loaded = parseInt(slideshowEl.getAttribute('data-loaded'))
-            slideshowEl.setAttribute('data-loaded', (loaded + 1))
 
-            var paginationEl = slideshowEl.querySelector(paginationSelector)
-            if (paginationEl) {
-              paginationEl.innerText = '1/' + slides
+            if (!slideshows[slideshowId]) {
+              slideshows[slideshowId] = {
+                el: slideshowEl,
+                sliderEl: slideshowEl.querySelector(sliderSelector),
+                slides: slides,
+                loaded: 0,
+                dragend: null
+              }
+
+              if (slides > 1) {
+                window.setTimeout(function () {
+                  // Force load
+                  var notLoaded = Array.from(slideshowEl.querySelectorAll(lazySelector + ':not(.' + loadedClass + ')'))
+
+                  notLoaded = notLoaded.filter(function (notLoadedImage) {
+                    if (
+                      (notLoadedImage.getAttribute('data-src') !== loadedImage.getAttribute('src')) &&
+                      (notLoadedImage.classList.contains(loadedClass) === false)
+                    ) {
+                      return notLoadedImage
+                    }
+                  })
+
+                  lazyImages.load(notLoaded, true)
+                }, 500)
+              }
             }
 
-            var captionEl = slideshowEl.querySelector(captionSelector)
-            if (captionEl) {
-              captionEl.innerText = sliderEl.querySelector(itemSelector).getAttribute('data-caption') || ''
-            }
+            slideshows[slideshowId].loaded += 1
 
-            var slideshowNavButtons = slideshowEl.querySelectorAll('.js-slideshowNavItem')
+            if (
+              slideshows[slideshowId].slides > 1 &&
+              slideshows[slideshowId].slides === slideshows[slideshowId].loaded
+            ) {
+              var slideshowNavButtons = slideshowEl.querySelectorAll('.js-slideshowNavItem')
+              var slideshowLeftButton = slideshowEl.querySelector('.js-slideshowLeft')
+              var slideshowRightButton = slideshowEl.querySelector('.js-slideshowRight')
 
-            if (loaded > 0 && (slides === (loaded + 1))) {
-              slideshows.push(new Dragend(sliderEl, {
+              slideshows[slideshowId].dragend = new Dragend(slideshows[slideshowId].sliderEl, {
                 pageClass: 'js-slideshowItem',
                 afterInitialize: function () {
                   slideshowEl.classList.add(activeClass)
                   var slideshow = this
-
-                  // TODO: Set up arrow keys clicks
 
                   if (slideshowNavButtons) {
                     if (slideshowNavButtons[slideshow.page]) {
@@ -126,10 +153,37 @@
                     })
                   }
 
+                  if (!Modernizr.touchevents && slideshowLeftButton && slideshowRightButton) {
+                    slideshowLeftButton.addEventListener('click', function (e) {
+                      if (slideshow.page !== 0) {
+                        slideshow.scrollToPage(slideshow.page)
+                      } else {
+                        // Reverse
+                        slideshow.scrollToPage(slideshow.page + 2)
+                      }
+
+                      e.preventDefault()
+                    })
+
+                    slideshowRightButton.addEventListener('click', function (e) {
+                      if ((slideshow.page + 1) !== slideshow.pagesCount) {
+                        slideshow.scrollToPage(slideshow.page + 2)
+                      } else {
+                        // Reverse
+                        slideshow.scrollToPage(slideshow.page)
+                      }
+
+                      e.preventDefault()
+                    })
+                  }
+
                   Waypoint.refreshAll()
                 },
                 onSwipeEnd: function (slider, slide) {
                   var slideshow = this
+
+                  slideshowLeftButton.classList.toggle('is-reversed', slideshow.page === 0)
+                  slideshowRightButton.classList.toggle('is-reversed', (slideshow.page + 1) === slideshow.pagesCount)
 
                   if (paginationEl) {
                     paginationEl.innerText = (slideshow.page + 1) + '/' + slideshow.pagesCount
@@ -153,7 +207,17 @@
                     }
                   }
                 }
-              }))
+              })
+            }
+
+            var paginationEl = slideshowEl.querySelector(paginationSelector)
+            if (paginationEl) {
+              paginationEl.innerText = '1/' + slideshows[slideshowId].slides
+            }
+
+            var captionEl = slideshowEl.querySelector(captionSelector)
+            if (captionEl) {
+              captionEl.innerText = slideshows[slideshowId].sliderEl.querySelector(itemSelector).getAttribute('data-caption') || ''
             }
           }
 
@@ -189,7 +253,7 @@
         return new Waypoint({
           element: chapterSection,
           handler: function (direction) {
-            var paginationTitle = ''
+            var paginationTitle = chapterPagination.getAttribute('data-default')
 
             if (direction === 'down') {
               paginationTitle = this.element.getAttribute('data-pagination')
