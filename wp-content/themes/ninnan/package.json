@@ -10,11 +10,12 @@
     "start": "parallelshell 'npm run watch'",
     "build:js": "uglifyjs $npm_package_config_js_files --screw-ie8 --comments -o assets/javascript/main-min.js",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/style-min.css assets/css/style.css",
+    "build:css:wysiwyg": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/wysiwyg-min.css assets/css/wysiwyg.css",
     "build:deploy": "npm run lint:js && npm run build:js && npm run build:css",
     "lint:js": "standard 'assets/javascript/**/*.js'",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css'",
     "watch:js": "eye --*glob=assets/javascript/**/*.js,%**/*-min.js npm run lint:js and npm run build:js",
-    "watch:css": "eye --*glob=assets/css/**/*.css,%**/*-min.css npm run build:css"
+    "watch:css": "eye --*glob=assets/css/**/*.css,%**/*-min.css npm run build:css and npm run build:css:wysiwyg"
   },
   "config": {
     "js_files": "assets/javascript/vendor/modernizr-custom.js assets/javascript/vendor/moveTo.js assets/javascript/vendor/blazy.js assets/javascript/vendor/waypoints.js assets/javascript/vendor/dragend.js assets/javascript/main.js"

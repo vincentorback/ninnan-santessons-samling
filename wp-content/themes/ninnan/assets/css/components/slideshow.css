@@ -45,7 +45,7 @@
   justify-content: space-between;
   padding: 1em;
 
-  font-size: 1.5em;
+  font-size: 1.2em;
 
   background: rgba(0, 0, 0, .5);
 }
@@ -53,6 +53,7 @@
 @media (--md-viewport) {
   .Slideshow-info {
     background: transparent;
+    font-size: 1.5em;
   }
 }
 

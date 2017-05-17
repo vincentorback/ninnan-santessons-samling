@@ -10,7 +10,13 @@
 
 .Figure-caption {
   padding: 1em;
-  font-size: 1.5em;
+  font-size: 1.2em;
+}
+
+@media (--md-viewport) {
+  .Figure-caption {
+    font-size: 1.5em;
+  }
 }
 
 

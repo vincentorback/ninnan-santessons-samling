@@ -57,7 +57,7 @@ if ($about_page) {
       <div class="Grid-cell u-md-size1of3">
         <div class="Section">
           <div class="Section-text">
-            <div class="Type">
+            <div class="Type Type--noIndent">
               <?php the_field('thanks', $about_page->ID); ?>
             </div>
           </div>

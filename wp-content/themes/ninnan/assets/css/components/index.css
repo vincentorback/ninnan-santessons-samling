@@ -10,7 +10,7 @@
 
 @media (--sm-viewport) {
   .Index-item {
-    padding: 0 40px 40px;
+    padding: 10px;
   }
 }
 
@@ -38,11 +38,18 @@
   justify-content: center;
   flex-direction: column;
 
-  font-size: 1.5em;
+  font-size: 18px;
+  font-family: var(--font-apercu);
 
   opacity: 0;
   transition: opacity 200ms ease;
   backface-visibility: hidden;
+}
+
+@media (--lg-viewport) {
+  .Index-itemInfo {
+    font-size: 20px;
+  }
 }
 
 html.touchevents .Index-itemInfo {

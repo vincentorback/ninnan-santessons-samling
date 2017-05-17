@@ -14,7 +14,7 @@ $title = get_sub_field('text_title')
         <h1 class="Section-title"><?php echo $title; ?></h1>
         <?php } ?>
       </div>
-      <div class="Section Section--white">
+      <div class="Section Section--white Section--small">
         <div class="Section-text">
           <div class="Type">
             <?php the_sub_field('text'); ?>

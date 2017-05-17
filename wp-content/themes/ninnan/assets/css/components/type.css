@@ -8,12 +8,12 @@
 .Type {
   font-family: var(--font-apercu);
   line-height: var(--text-lineheight-large);
-  font-size: 1.1em;
+  font-size: 18px;
 }
 
 @media (--lg-viewport) {
   .Type {
-    font-size: 1.4em;
+    font-size: 20px;
   }
 }
 
@@ -145,6 +145,21 @@
 }
 
 
+/* Indent */
+.Type p {
+  margin: 0;
+}
+
+.Type p:not(:first-child) {
+  text-indent: var(--text-indent);
+}
+
+.Type--noIndent p {
+  margin: var(--Type-spacing) 0;
+  text-indent: 0 !important;
+}
+
+
 /* Divider */
 
 .Type hr {
@@ -161,9 +176,15 @@
 /* Blockquote */
 
 .Type blockquote {
-  font-size: 1.3em;
-  margin: 0;
+  text-align: center;
+  font-size: 1.2em;
   padding: 0 var(--Type-spacing);
+}
+
+@media (--lg-viewport) {
+  .Type blockquote {
+    font-size: 1.5em;
+  }
 }
 
 

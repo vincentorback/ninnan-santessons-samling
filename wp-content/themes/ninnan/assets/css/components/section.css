@@ -72,7 +72,13 @@
 
 .Section-chapterIntroTitle {
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 1.5em;
+}
+
+@media (--lg-viewport) {
+  .Section-chapterIntroTitle {
+    font-size: 2em;
+  }
 }
 
 .Section-chapterIntroTitle:not(:last-child) {
@@ -82,9 +88,48 @@
 
 
 .Section-title {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: var(--site-spacing-sm);
+  font-family: var(--font-apercu);
 }
+
+@media (--lg-viewport) {
+  .Section-title {
+    font-size: 2em;
+    margin-bottom: var(--site-spacing-md);
+  }
+}
+
+/*.Section-titleLink {
+  position: relative;
+}
+
+.Section-titleLink::before {
+  position: absolute;
+  content: "#";
+  left: 0;
+  transform: translateX(-120%);
+  color: var(--color-gray);
+
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.Section-titleLink:hover::before {
+  opacity: 1;
+}*/
+
+.Section-title span {
+  display: block;
+}
+
+
+
+.Section--text .Section-title {
+  padding-left: var(--text-indent);
+  text-transform: uppercase;
+}
+
 
 
 .Section--intro {
@@ -121,7 +166,6 @@
 .Section--white {
   background: #fff;
 }
-
 
 
 
@@ -211,6 +255,12 @@
     padding-right: 5%;
     width: 100%;
     max-width: 700px;
+  }
+}
+
+@media (--lg-viewport) {
+  .Section--letter .Section-text {
+    padding-left: 200px;
   }
 }
 

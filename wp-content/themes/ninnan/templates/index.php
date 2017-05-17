@@ -35,9 +35,9 @@ if ($post_query->have_posts()) { ?>
                 $title = '';
               }
       ?>
-
+      <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
-        class="Index-item Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5"
+        class="Index-item"
         href="#<?php echo $pagination; ?>-<?php echo urlencode($title); ?>">
           <div class="Index-itemContent">
             <img class="Index-itemImage js-lazy" data-src="<?php echo $image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
@@ -51,7 +51,7 @@ if ($post_query->have_posts()) { ?>
           <p class="Index-itemTitle"><?php echo $pagination; ?></p>
           <?php } ?>
         </a>
-
+      </div>
       <?php
             }
           }

@@ -1,5 +1,31 @@
 <?php
 
+
+
+/**
+ * Hide core updates
+ */
+add_action( 'after_setup_theme', function () {
+
+  // Still show updates to superadmins
+  if ( (! current_user_can( 'update_core' )) || is_super_admin() ) {
+    return;
+  }
+
+  add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
+  add_filter( 'pre_option_update_core', '__return_null' );
+  add_filter( 'pre_site_transient_update_core', '__return_null' );
+}, 1 );
+
+
+/**
+ * Disable plugin update notifications
+ */
+remove_action( 'load-update-core.php', 'wp_update_plugins' );
+add_filter( 'pre_site_transient_update_plugins', '__return_null' );
+
+
+
 /**
  * Hide the admin bar on the front-end
  * @link https://codex.wordpress.org/Function_Reference/show_admin_bar
@@ -189,10 +215,21 @@ add_action( 'init', function () {
  * @param $settings Object Array of TinyMCE settings
  */
 add_filter('tiny_mce_before_init', function ($settings) {
-  $settings['toolbar1'] = 'formatselect,bold,italic,blockquote,link,unlink,underline';
+  $settings['toolbar1'] = 'formatselect,styleselect,bold,italic,blockquote,link,unlink,underline,alignleft';
   $settings['toolbar2'] = '';
 
   $settings['block_formats'] = "Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3;";
+
+  $settings['content_css'] = get_template_directory_uri() . '/assets/css/wysiwyg-min.css';
+
+  $settings['style_formats'] = json_encode(array(
+    array(
+      'title' => 'Ta bort indrag',
+      'block' => 'p',
+      'classes' => 'u-noIndent',
+      'wrapper' => false
+    )
+  ));
 
   return $settings;
 });

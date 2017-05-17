@@ -3,3 +3,7 @@
 .u-size1of1 {
   width: 100%;
 }
+
+.u-noIndent {
+  text-indent: 0 !important;
+}
