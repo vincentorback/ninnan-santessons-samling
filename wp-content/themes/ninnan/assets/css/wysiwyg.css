@@ -1,41 +1,32 @@
-/*
-Theme Name: Ninnan Santessons Samling
-Author: Vincent Orback
-*/
-
-/* Variables */
 @import "base/config";
-
-/* Resetting styles */
 @import "base/fonts";
-
 
 :root {
   --Type-spacing: 30px;
 }
 
-
 #tinymce {
+  margin: 0;
+  padding: 15px 20px;
   font: var(--font-normal) 16px/var(--text-lineheight-large) var(--font-apercu);
   color: var(--color-black);
 }
 
-
-#tinymce p {
+p {
   margin: 0;
 }
 
-#tinymce p:not(:first-child) {
+p:not(:first-child) {
   text-indent: var(--text-indent);
 }
 
-.u-noIndent {
-  text-indent: 0 !important;
-}
-
-#tinymce blockquote {
+blockquote {
   text-align: center;
   font-size: 1.4em;
   padding: 0 var(--Type-spacing);
   margin: 30px 0;
+}
+
+.u-noIndent {
+  text-indent: 0 !important;
 }

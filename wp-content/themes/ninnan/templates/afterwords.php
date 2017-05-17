@@ -9,7 +9,7 @@ if ($afterwords_page) {
     <span class="Page-paginationInner"><?php echo $pagination; ?></span>
   </span>
   <?php } ?>
-  <section class="Section Section--text">
+  <section class="Section Section--text" id="efterord">
     <div class="Site-container Site-container--narrow">
       <h1 class="Section-title">Efterord</h1>
       <div class="Type">

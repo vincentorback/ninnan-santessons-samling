@@ -1,12 +1,13 @@
 <?php
 $pagination = get_sub_field('paginering');
-$title = get_sub_field('text_title')
+$title = get_sub_field('text_title');
+$url_safe_title = selectorSafeString($title);
 ?>
 
 <section
   class="Section Section--letter Grid Grid--equalHeight js-chapterSection"
   data-pagination="<?php echo $pagination; ?>"
-  id="<?php echo $pagination; ?>-<?php echo urlencode($title); ?>">
+  id="page-<?php echo $pagination; ?>-<?php echo $url_safe_title; ?>">
   <div class="Grid-cell u-md-size1of2">
     <div class="u-size1of1">
       <div class="Section Section--white Section--small">

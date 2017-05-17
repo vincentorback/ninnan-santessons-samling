@@ -27,14 +27,18 @@
 
       Array.from(hashLinks, function (linkEl) {
         linkEl.addEventListener('click', function (e) {
-          var targetEl = doc.querySelector(linkEl.href.substring(linkEl.href.indexOf('#')))
-          targetEl.scrollIntoView()
+          var href = linkEl.getAttribute('href')
+          var targetEl = doc.querySelector(href.substring(href.indexOf('#')))
 
-          window.setTimeout(function () {
+          if (targetEl) {
             targetEl.scrollIntoView()
-          }, 100)
 
-          e.preventDefault()
+            window.setTimeout(function () {
+              targetEl.scrollIntoView()
+            }, 100)
+
+            e.preventDefault()
+          }
         })
       })
     },

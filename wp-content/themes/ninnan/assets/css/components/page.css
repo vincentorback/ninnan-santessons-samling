@@ -17,9 +17,10 @@
 
 .Page-paginationInner {
   display: block;
-  padding: 1em 1.3em;
+  padding: 1em;
 
   font-size: 1em;
+  line-height: 1;
   background: var(--color-black);
   color: #fff;
 }
@@ -27,7 +28,6 @@
 @media (--md-viewport) {
   .Page-paginationInner {
     font-size: 2em;
-    padding: 1em;
     background: transparent;
   }
 }

@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Hide core updates
  */
@@ -25,13 +23,11 @@ remove_action( 'load-update-core.php', 'wp_update_plugins' );
 add_filter( 'pre_site_transient_update_plugins', '__return_null' );
 
 
-
 /**
  * Hide the admin bar on the front-end
  * @link https://codex.wordpress.org/Function_Reference/show_admin_bar
  */
 add_filter( 'show_admin_bar', '__return_false' );
-
 
 
 /**
@@ -48,10 +44,6 @@ add_action( 'admin_bar_menu', function ( $admin_bar ) {
 }, 999);
 
 
-
-
-
-
 /**
  * Hide admin menu items. Can be both parents and children in dropdowns.
  * Specify link to parent and link to child.
@@ -64,8 +56,6 @@ add_action( 'admin_head', function () {
 
   // Remove Comments
   remove_menu_page( 'edit-comments.php' );
-
-
 
   if ( ! current_user_can( 'administrator' ) ) {
     // Remove Dashboard
@@ -101,8 +91,6 @@ add_action( 'admin_head', function () {
 });
 
 
-
-
 /**
  * Remove access to the dashboard
  */
@@ -119,10 +107,6 @@ add_action( 'admin_init', function () {
 });
 
 
-
-
-
-
 /**
  * De-registers the WordPress stock jQuery script
  * @link https://codex.wordpress.org/Function_Reference/wp_deregister_script
@@ -133,9 +117,6 @@ add_action( 'wp_enqueue_scripts', function () {
      wp_deregister_script( 'wp-embed' );
   }
 });
-
-
-
 
 
 /**
@@ -149,10 +130,6 @@ add_action( 'init', function () {
   remove_action( 'wp_head', 'rest_output_link_wp_head', 10 );
   remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 });
-
-
-
-
 
 
 /**
@@ -177,10 +154,6 @@ add_action( 'init', function () {
 });
 
 
-
-
-
-
 /**
  * Remove emoji support
  * @link https://codex.wordpress.org/Emoji
@@ -203,33 +176,4 @@ add_action( 'init', function () {
 
     return array();
   });
-});
-
-
-
-
-/**
- * Change default TinyMCE WYSIWYG settings.
- * @link https://codex.wordpress.org/TinyMCE
- *
- * @param $settings Object Array of TinyMCE settings
- */
-add_filter('tiny_mce_before_init', function ($settings) {
-  $settings['toolbar1'] = 'formatselect,styleselect,bold,italic,blockquote,link,unlink,underline,alignleft';
-  $settings['toolbar2'] = '';
-
-  $settings['block_formats'] = "Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3;";
-
-  $settings['content_css'] = get_template_directory_uri() . '/assets/css/wysiwyg-min.css';
-
-  $settings['style_formats'] = json_encode(array(
-    array(
-      'title' => 'Ta bort indrag',
-      'block' => 'p',
-      'classes' => 'u-noIndent',
-      'wrapper' => false
-    )
-  ));
-
-  return $settings;
 });

@@ -56,7 +56,7 @@
   transition: transform 300ms ease;
 }
 
-.Section-scrollDown:hover {
+html.no-touchevents .Section-scrollDown:hover {
   transform: translateY(5px);
 }
 

@@ -178,7 +178,13 @@
 .Type blockquote {
   text-align: center;
   font-size: 1.2em;
-  padding: 0 var(--Type-spacing);
+  padding: 0;
+}
+
+@media (--md-viewport) {
+  .Type blockquote {
+    padding: 0 var(--Type-spacing);
+  }
 }
 
 @media (--lg-viewport) {

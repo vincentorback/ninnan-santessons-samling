@@ -34,11 +34,14 @@ if ($post_query->have_posts()) { ?>
               if (!$title) {
                 $title = '';
               }
+
+              $url_safe_title = selectorSafeString($title);
+
       ?>
       <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
-        href="#<?php echo $pagination; ?>-<?php echo urlencode($title); ?>">
+        href="#page-<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
           <div class="Index-itemContent">
             <img class="Index-itemImage js-lazy" data-src="<?php echo $image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
             <div class="Index-itemInfo">
