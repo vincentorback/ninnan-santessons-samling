@@ -16,3 +16,5 @@ wp-content/themes/ninnan/**/*-min.*
 node_modules
 
 .DS_Store
+
+.htaccess
