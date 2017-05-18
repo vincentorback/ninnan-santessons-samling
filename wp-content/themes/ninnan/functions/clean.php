@@ -66,9 +66,6 @@ add_action( 'admin_head', function () {
     // Remove Posts -> Tags
     remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
 
-    // Remove Media
-    remove_menu_page( 'upload.php' );
-
     // Remove Appearance
     remove_menu_page( 'themes.php' );
 

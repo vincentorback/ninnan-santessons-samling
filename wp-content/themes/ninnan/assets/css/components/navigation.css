@@ -1,5 +1,5 @@
 :root {
-  --Navigation-width: 400px;
+  --Navigation-width: 450px;
   --Navigation-button-width: 65px;
 }
 
@@ -79,6 +79,9 @@
 }
 
 .Navigation-openText {
+  display: block;
+  backface-visibility: hidden;
+  opacity: 1;
   transition: opacity 200ms ease;
 }
 
@@ -110,10 +113,12 @@
   padding: .4em .5em;
   opacity: 0;
   outline: none;
-  font-size: 3em;
+  font-size: 2.75em;
 }
 
 .Navigation-closeText {
+  display: block;
+  backface-visibility: hidden;
   opacity: 1;
   transition: opacity 200ms ease;
 }

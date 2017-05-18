@@ -38,7 +38,7 @@
     "standard": "^10.0.2",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
-    "uglify-js": "^3.0.7"
+    "uglify-js": "^3.0.8"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
