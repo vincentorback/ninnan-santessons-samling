@@ -32,6 +32,7 @@ if ($about_page) {
                 data-src="<?php echo $image['sizes']['medium']; ?>"
                 <?php if ($imageCount > 1) { ?>data-slideshow="<?php echo $slideshow_id; ?>"<?php } ?>
                 alt="<?php echo $image['alt']; ?>">
+                <noscript><img class="Slideshow-itemImage" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"></noscript>
               </div>
               <?php } ?>
             </div>

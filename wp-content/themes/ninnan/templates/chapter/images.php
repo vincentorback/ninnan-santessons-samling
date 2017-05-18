@@ -25,6 +25,7 @@ if ($images) {
       ?>
       <figure class="Figure" id="<?php echo $image['title']; ?>">
         <img class="Figure-image js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
+        <noscript><img class="Figure-image" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"></noscript>
         <figcaption class="Figure-caption"><?php echo $image['caption']; ?></figcaption>
       </figure>
       <?php

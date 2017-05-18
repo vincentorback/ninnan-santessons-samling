@@ -71,6 +71,7 @@
   align-items: stretch;
 }
 
+html.no-js .Slideshow-nav,
 html.touchevents .Slideshow-nav {
   display: none;
 }
@@ -108,6 +109,10 @@ html.touchevents .Slideshow-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+html.no-js .Slideshow-buttonNav {
+  display: none;
 }
 
 .Slideshow-buttonNavItem {
@@ -170,6 +175,24 @@ html.touchevents .Slideshow-nav {
     min-height: 500px;
   }
 }
+
+
+html.no-js .Slideshow--sticky {
+  position: static;
+  height: auto;
+}
+
+html.no-js .Slideshow--sticky .Slideshow-slider,
+html.no-js .Slideshow--sticky .Slideshow-item {
+  height: auto;
+  min-height: none;
+}
+
+html.no-js .Slideshow--sticky .Slideshow-itemImage {
+  max-height: none;
+}
+
+
 
 
 .Slideshow--small {

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ninnan Santessons Samling</title>
+  <meta name="description" content="Ninnan Santessons är min gammelmormor, min pappas mormor, och under min uppväxt har jag fått fragmentariska glimtar av hennes liv. Det här projektet är mitt försök att lära känna henne — och hennes tid — lite bättre.">
   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style-min.css" rel="stylesheet">
   <?php wp_head(); ?>
   <script>
@@ -53,14 +54,15 @@
       <?php
       $about_page = get_page_by_title('Om projektet');
       if ($about_page) {
-        $presskit = get_field('presskit', $about_page->ID)
+        $presskit = get_field('presskit', $about_page->ID);
+        if ($presskit) {
       ?>
       <li class="Navigation-item">
         <a class="Navigation-link" href="<?php echo $presskit; ?>" download>
           <span class="Navigation-linkInner">Presskit</span>
         </a>
       </li>
-      <?php } ?>
+      <?php } } ?>
     </ul>
 
     <button class="Navigation-close js-navToggle" type="button" aria-controls="navigation">

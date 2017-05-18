@@ -45,6 +45,7 @@ $url_safe_title = selectorSafeString($title);
           data-src="<?php echo $slideshow_image['sizes']['medium']; ?>"
           <?php if ($imageCount > 1) { ?>data-slideshow="<?php echo $slideshow_id; ?>"<?php } ?>
           alt="<?php echo $slideshow_image['alt']; ?>">
+          <noscript><img class="Slideshow-itemImage" src="<?php echo $slideshow_image['sizes']['medium']; ?>" alt="<?php echo $slideshow_image['alt']; ?>"></noscript>
         </div>
         <?php } ?>
       </div>
