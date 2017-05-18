@@ -1,4 +1,3 @@
-
 <section class="Section Section--index Section--gray" id="index">
   <div class="Site-container">
     <h1 class="Section-title">Index</h1>

@@ -3,12 +3,13 @@ $about_page = get_page_by_title('Om projektet');
 if ($about_page) {
 ?>
 <section class="Section Section--gray Section--about" id="about">
-
   <div class="Site-container">
+
     <h1 class="Section-title">Om projektet</h1>
 
     <div class="Grid Grid--withGutter">
       <div class="Grid-cell u-md-size2of3">
+
         <div class="Section">
           <div class="Type">
             <?php echo apply_filters('the_content', $about_page->post_content); ?>
@@ -53,8 +54,10 @@ if ($about_page) {
           </figure>
           <?php } ?>
         </div>
+
       </div>
       <div class="Grid-cell u-md-size1of3">
+
         <div class="Section">
           <div class="Section-text">
             <div class="Type Type--noIndent">
@@ -62,8 +65,10 @@ if ($about_page) {
             </div>
           </div>
         </div>
+
       </div>
     </div>
+
   </div>
 </section>
 <?php } ?>

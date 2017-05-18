@@ -172,9 +172,8 @@ html.touchevents .Slideshow-nav {
 }
 
 
-/* TODO: Nicer ? */
 .Slideshow--small {
-  box-shadow: inset rgba(0, 0, 0, .1) 0 0 20px;
+
 }
 
 .Slideshow--small,

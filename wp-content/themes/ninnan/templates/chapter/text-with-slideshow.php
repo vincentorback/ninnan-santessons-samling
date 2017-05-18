@@ -10,11 +10,13 @@ $url_safe_title = selectorSafeString($title);
   id="page-<?php echo $pagination; ?>-<?php echo $url_safe_title; ?>">
   <div class="Grid-cell u-md-size1of2">
     <div class="u-size1of1">
+
       <div class="Section Section--white Section--small">
         <?php if ($title) { ?>
         <h1 class="Section-title"><?php echo $title; ?></h1>
         <?php } ?>
       </div>
+
       <div class="Section Section--white Section--small">
         <div class="Section-text">
           <div class="Type">
@@ -22,9 +24,11 @@ $url_safe_title = selectorSafeString($title);
           </div>
         </div>
       </div>
+
     </div>
   </div>
   <div class="Grid-cell u-md-size1of2">
+
     <?php
     $slideshow_images = get_sub_field('slideshow');
     $imageCount = count($slideshow_images);
@@ -56,5 +60,7 @@ $url_safe_title = selectorSafeString($title);
       </div>
       <?php } ?>
     </figure>
+
   </div>
+
 </section>

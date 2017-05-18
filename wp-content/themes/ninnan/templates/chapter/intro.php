@@ -10,7 +10,7 @@ $url_safe_title = selectorSafeString($title);
   id="page-<?php echo $pagination; ?>-<?php echo $url_safe_title; ?>">
   <div>
     <?php if ($pagination && strlen($pagination) > 0) { ?>
-    <p class="Section-chapterIntroTitle"><?php echo sprintf('%02d', $post->menu_order); ?></p>
+    <p class="Section-chapterIntroTitle"><?php echo $post->menu_order; ?></p>
     <?php } ?>
     <?php if ($title && strlen($title) > 0) { ?>
     <h1 class="Section-chapterIntroTitle"><?php echo $title; ?></h1>

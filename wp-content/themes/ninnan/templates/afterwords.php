@@ -4,11 +4,13 @@ if ($afterwords_page) {
   $pagination = get_field('pagination', $afterwords_page->ID);
 ?>
 <div class="Page Page--white">
+
   <?php if ($pagination) { ?>
   <span class="Page-pagination">
     <span class="Page-paginationInner"><?php echo $pagination; ?></span>
   </span>
   <?php } ?>
+
   <section class="Section Section--text" id="efterord">
     <div class="Site-container Site-container--narrow">
       <h1 class="Section-title">Efterord</h1>
@@ -17,5 +19,6 @@ if ($afterwords_page) {
       </div>
     </div>
   </section>
+
 </div>
 <?php } ?>

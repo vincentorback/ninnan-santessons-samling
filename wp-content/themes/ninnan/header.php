@@ -1,15 +1,11 @@
 <!doctype html>
-<?php $theme_url = get_template_directory_uri(); ?>
 <html class="Site no-js" lang="sv">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Ninnan Santessons Samling</title>
-
-  <link href="<?php echo $theme_url; ?>/assets/css/style-min.css" rel="stylesheet">
+  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style-min.css" rel="stylesheet">
   <?php wp_head(); ?>
-
   <script>
   if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
     // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -24,11 +20,7 @@
 
 <body <?php body_class('Site-body'); ?>>
 
-  <?php if (!is_user_logged_in() && !is_404()) { ?>
-    <div class="Soon">
-      <p>Coming soon...</p>
-    </div>
-  <?php } else if (!is_404()) { ?>
+<?php if (!is_404()) { ?>
 
   <header class="Section Section--intro Section--gray" role="banner">
     <div class="Site-container">
@@ -80,4 +72,4 @@
     </button>
   </nav>
 
-  <?php } ?>
+<?php } ?>

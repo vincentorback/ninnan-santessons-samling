@@ -1,54 +1,54 @@
 <?php get_header(); ?>
-<?php if (is_user_logged_in()) { ?>
+
+<!-- Förord -->
+<?php require_once('templates/forewords.php'); ?>
 
 
-  <!-- Förord -->
-  <?php require_once('templates/forewords.php'); ?>
+<!-- Kapitel -->
+<div class="Page">
+  <?php
+  $args = array(
+    'post_type' => 'chapter',
+    'order' => 'ASC',
+    'orderby' => 'menu_order',
+    'posts_per_page' => -1
+  );
 
+  $post_query = new WP_Query($args);
 
-  <!-- Kapitel -->
-  <div class="Page">
-    <?php
-    $args = array(
-      'post_type' => 'chapter',
-      'order' => 'ASC',
-      'orderby' => 'menu_order',
-      'posts_per_page' => -1
-    );
-    $post_query = new WP_Query($args);
+  $start_pagination = get_field('chapter_pagination', $post_query->posts[0]->ID);
+  ?>
+  <span class="Page-pagination">
+    <span class="Page-paginationInner js-chapterPagination" data-default="<?php echo $start_pagination; ?>"><?php echo $start_pagination; ?></span>
+  </span>
 
-    $start_pagination = get_field('chapter_pagination', $post_query->posts[0]->ID);
-    ?>
-    <span class="Page-pagination">
-      <span class="Page-paginationInner js-chapterPagination" data-default="<?php echo $start_pagination; ?>"><?php echo $start_pagination; ?></span>
-    </span>
+  <?php
+  if ($post_query->have_posts()) {
+    $chapter_number = 1;
 
-    <?php
-    if ($post_query->have_posts()) {
-      $chapter_number = 1;
-      while ($post_query->have_posts()) {
-        $post_query->the_post();
+    while ($post_query->have_posts()) {
+      $post_query->the_post();
 
-        require('templates/chapter.php');
+      require('templates/chapter.php');
 
-        $chapter_number++;
-      }
+      $chapter_number++;
     }
-    ?>
-  </div>
+
+  }
+  ?>
+</div>
 
 
-  <!-- Efterord -->
-  <?php require_once('templates/afterwords.php'); ?>
+<!-- Efterord -->
+<?php require_once('templates/afterwords.php'); ?>
 
 
-  <!-- Om projektet -->
-  <?php require_once('templates/about.php'); ?>
+<!-- Om projektet -->
+<?php require_once('templates/about.php'); ?>
 
 
-  <!-- Index -->
-  <?php require_once('templates/index.php'); ?>
+<!-- Index -->
+<?php require_once('templates/index.php'); ?>
 
 
-<?php } ?>
 <?php get_footer(); ?>
