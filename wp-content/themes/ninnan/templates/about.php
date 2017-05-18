@@ -1,6 +1,9 @@
 <?php
-$about_page = get_page_by_title('Om projektet');
+$about_page = getCustomPage('Om projektet');
 if ($about_page) {
+  $images = get_field('slideshow', $about_page->ID);
+  $text = $about_page->post_content;
+  $thanks = get_field('thanks', $about_page->ID);
 ?>
 <section class="Section Section--gray Section--about" id="about">
   <div class="Site-container">
@@ -11,12 +14,13 @@ if ($about_page) {
       <div class="Grid-cell u-md-size2of3">
 
         <div class="Section">
+          <?php if ($text) { ?>
           <div class="Type">
-            <?php echo apply_filters('the_content', $about_page->post_content); ?>
+            <?php echo apply_filters('the_content', $text); ?>
           </div>
-          <?php
-          $images = get_field('slideshow', $about_page->ID);
+          <?php } ?>
 
+          <?php
           if ($images) {
             $slideshow_id = uniqid();
             $imageCount = count($images);
@@ -59,13 +63,15 @@ if ($about_page) {
       </div>
       <div class="Grid-cell u-md-size1of3">
 
+        <?php if ($thanks) { ?>
         <div class="Section">
           <div class="Section-text">
             <div class="Type Type--noIndent">
-              <?php the_field('thanks', $about_page->ID); ?>
+              <?php echo $thanks; ?>
             </div>
           </div>
         </div>
+        <?php } ?>
 
       </div>
     </div>

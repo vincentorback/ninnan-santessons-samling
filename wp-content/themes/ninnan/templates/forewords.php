@@ -1,5 +1,5 @@
 <?php
-$forewords_page = get_page_by_title('Förord');
+$forewords_page = getCustomPage('Förord');
 if ($forewords_page) {
   $pagination = get_field('pagination', $forewords_page->ID);
 ?>

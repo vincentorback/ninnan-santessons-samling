@@ -6,6 +6,7 @@ $url_safe_title = selectorSafeString($title);
 $background = get_sub_field('background') ? get_sub_field('background') : '#111';
 ?>
 
+<?php if ($title || $text) { ?>
 <section
   class="Section Section--text Section--black js-chapterSection"
   style="background-color:<?php echo $background; ?>"
@@ -25,3 +26,4 @@ $background = get_sub_field('background') ? get_sub_field('background') : '#111'
 
   </div>
 </section>
+<?php } ?>

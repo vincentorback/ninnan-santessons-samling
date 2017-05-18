@@ -52,7 +52,7 @@
         </a>
       </li>
       <?php
-      $about_page = get_page_by_title('Om projektet');
+      $about_page = getCustomPage('Om projektet');
       if ($about_page) {
         $presskit = get_field('presskit', $about_page->ID);
         if ($presskit) {

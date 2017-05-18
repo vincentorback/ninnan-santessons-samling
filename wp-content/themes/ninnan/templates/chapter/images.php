@@ -10,11 +10,11 @@ if ($images) {
   data-pagination="<?php echo $pagination; ?>"
   id="page-<?php echo $pagination; ?>-<?php echo $url_safe_title; ?>">
 
+  <?php if ($title) { ?>
   <div class="Section Section--small">
-    <?php if ($title) { ?>
     <h1 class="Section-title"><?php echo $title; ?></h1>
-    <?php } ?>
   </div>
+  <?php } ?>
 
   <div class="Site-container">
     <div class="Section">
@@ -26,7 +26,9 @@ if ($images) {
       <figure class="Figure" id="<?php echo $image['title']; ?>">
         <img class="Figure-image js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
         <noscript><img class="Figure-image" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"></noscript>
+        <?php if ($image['caption']) { ?>
         <figcaption class="Figure-caption"><?php echo $image['caption']; ?></figcaption>
+        <?php } ?>
       </figure>
       <?php
           }

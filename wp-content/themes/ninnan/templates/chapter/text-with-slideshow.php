@@ -1,6 +1,7 @@
 <?php
 $pagination = get_sub_field('paginering');
 $title = get_sub_field('text_title');
+$text = get_sub_field('text');
 $url_safe_title = selectorSafeString($title);
 ?>
 
@@ -11,19 +12,21 @@ $url_safe_title = selectorSafeString($title);
   <div class="Grid-cell u-md-size1of2">
     <div class="u-size1of1">
 
+      <?php if ($title) { ?>
       <div class="Section Section--white Section--small">
-        <?php if ($title) { ?>
         <h1 class="Section-title"><?php echo $title; ?></h1>
-        <?php } ?>
       </div>
+      <?php } ?>
 
+      <?php if ($text) { ?>
       <div class="Section Section--white Section--small">
         <div class="Section-text">
           <div class="Type">
-            <?php the_sub_field('text'); ?>
+            <?php echo $text; ?>
           </div>
         </div>
       </div>
+      <?php } ?>
 
     </div>
   </div>

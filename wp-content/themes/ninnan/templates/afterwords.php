@@ -1,5 +1,5 @@
 <?php
-$afterwords_page = get_page_by_title('Efterord');
+$afterwords_page = getCustomPage('Efterord');
 if ($afterwords_page) {
   $pagination = get_field('pagination', $afterwords_page->ID);
 ?>

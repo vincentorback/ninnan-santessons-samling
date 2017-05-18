@@ -4,16 +4,17 @@
 
     <div class="Index Grid">
 
+
       <!-- Förord -->
       <?php
-      $forewords_page = get_page_by_title('Förord');
+      $forewords_page = getCustomPage('Förord');
       if ($forewords_page) {
         $forewords_pagination = get_field('pagination', $forewords_page->ID);
         $forewords_image = get_field('thumbnail', $forewords_page->ID);
         $forewords_image = wp_get_attachment_image_src($forewords_image);
         if ($forewords_image && $forewords_page) {
       ?>
-      <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5">
+      <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5 u-xl-size1of6">
         <a
         class="Index-item"
         href="#forord">
@@ -58,7 +59,8 @@
 
       ?>
 
-      <!-- Intro -->
+
+      <!-- Kapitel intro -->
       <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
@@ -77,8 +79,11 @@
           <?php } ?>
         </a>
       </div>
-      <?php }
+      <?php } ?>
 
+
+      <!-- Kapitel innehåll -->
+      <?php
       if (have_rows('chapter_content')) {
         while (have_rows('chapter_content')) {
           the_row();
@@ -95,7 +100,6 @@
             $url_safe_title = selectorSafeString($title);
             $image = wp_get_attachment_image_src($thumbnail);
       ?>
-
       <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
@@ -122,9 +126,10 @@
       }
       ?>
 
+
       <!-- Efterord -->
       <?php
-        $afterwords_page = get_page_by_title('Efterord');
+        $afterwords_page = getCustomPage('Efterord');
         if ($afterwords_page) {
           $afterwords_pagination = get_field('pagination', $afterwords_page->ID);
           $afterwords_image = get_field('thumbnail', $afterwords_page->ID);
@@ -151,9 +156,10 @@
       </div>
       <?php } } ?>
 
+
       <!-- Om projektet -->
       <?php
-        $about_page = get_page_by_title('Om projektet');
+        $about_page = getCustomPage('Om projektet');
         if ($about_page) {
           $about_pagination = get_field('pagination', $about_page->ID);
           $about_image = get_field('thumbnail', $about_page->ID);
@@ -182,6 +188,7 @@
         }
       }
       ?>
+
 
     </div>
   </div>
