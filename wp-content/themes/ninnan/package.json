@@ -13,6 +13,7 @@
     "build:css:wysiwyg": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/wysiwyg-min.css assets/css/wysiwyg.css",
     "build:deploy": "npm run lint:js && npm run build:js && npm run build:css",
     "lint:js": "standard 'assets/javascript/**/*.js'",
+    "lint:css": "stylelint 'assets/css/**/*.css'",
     "watch": "parallelshell 'npm run watch:js' 'npm run watch:css'",
     "watch:js": "eye --*glob=assets/javascript/**/*.js,%**/*-min.js npm run lint:js and npm run build:js",
     "watch:css": "eye --*glob=assets/css/**/*.css,%**/*-min.css npm run build:css and npm run build:css:wysiwyg"

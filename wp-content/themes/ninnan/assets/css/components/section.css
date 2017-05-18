@@ -1,5 +1,3 @@
-/** @define Section */
-
 .Section {
   position: relative;
   width: 100%;
@@ -99,25 +97,6 @@ html.no-touchevents .Section-scrollDown:hover {
     margin-bottom: var(--site-spacing-md);
   }
 }
-
-/*.Section-titleLink {
-  position: relative;
-}
-
-.Section-titleLink::before {
-  position: absolute;
-  content: "#";
-  left: 0;
-  transform: translateX(-120%);
-  color: var(--color-gray);
-
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-.Section-titleLink:hover::before {
-  opacity: 1;
-}*/
 
 .Section-title span {
   display: block;

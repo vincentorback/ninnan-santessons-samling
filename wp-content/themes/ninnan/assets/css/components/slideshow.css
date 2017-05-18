@@ -193,14 +193,14 @@ html.no-js .Slideshow--sticky .Slideshow-itemImage {
 }
 
 
-
-
-.Slideshow--small {
-
-}
-
 .Slideshow--small,
 .Slideshow--small .Slideshow-slider,
 .Slideshow--small .Slideshow-itemImage {
   max-height: 100vh;
+}
+
+html.no-js .Slideshow--small,
+html.no-js .Slideshow--small .Slideshow-slider,
+html.no-js .Slideshow--small .Slideshow-itemImage {
+  max-height: none;
 }
