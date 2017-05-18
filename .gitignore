@@ -1,14 +1,15 @@
 wp-config.php
 wp-config-prod.php
 
-wp
+wp/*
 !wp/.gitkeep
 
-wp-content/plugins
+wp-content/plugins/*
+wp-content/languages/plugins
 !wp-content/plugins/.gitkeep
 
 wp-content/uploads
-!wp-content/uploads/.gitkeep
+
 
 wp-content/themes/ninnan/**/*-min.*
 
