@@ -10,6 +10,8 @@ wp-content/plugins
 wp-content/uploads
 !wp-content/uploads/.gitkeep
 
+wp-content/themes/ninnan/**/*-min.*
+
 node_modules
 
 .DS_Store
