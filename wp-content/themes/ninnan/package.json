@@ -8,9 +8,9 @@
   },
   "scripts": {
     "start": "parallelshell 'npm run watch'",
-    "build:js": "uglifyjs $npm_package_config_js_files --screw-ie8 --comments -o assets/javascript/main-min.js",
-    "build:css": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/style-min.css assets/css/style.css",
-    "build:css:wysiwyg": "postcss -u postcss-import -u postcss-cssnext -u postcss-reporter --postcss-reporter.clearMessages true -u csswring --no-map -o assets/css/wysiwyg-min.css assets/css/wysiwyg.css",
+    "build:js": "uglifyjs $npm_package_config_js_files --comments -o assets/javascript/main-min.js",
+    "build:css": "postcss -u postcss-import -u postcss-cssnext -u csswring --no-map -o assets/css/style-min.css assets/css/style.css",
+    "build:css:wysiwyg": "postcss -u postcss-import -u postcss-cssnext -u csswring --no-map -o assets/css/wysiwyg-min.css assets/css/wysiwyg.css",
     "build:deploy": "npm run lint:js && npm run build:js && npm run build:css",
     "lint:js": "standard 'assets/javascript/**/*.js'",
     "lint:css": "stylelint 'assets/css/**/*.css'",
@@ -27,8 +27,6 @@
     "suitcss-components-grid": "^3.0.3"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.0",
-    "copyfiles": "^1.2.0",
     "csswring": "^6.0.0",
     "eye": "^0.0.3",
     "parallelshell": "^2.0.0",
@@ -39,9 +37,10 @@
     "standard": "^10.0.2",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
-    "uglify-js": "^3.0.8"
+    "uglify-js": "^3.0.9"
   },
   "stylelint": {
+    "ignoreFiles": "assets/css/**/*-min.css",
     "extends": "stylelint-config-standard",
     "rules": {
       "max-empty-lines": 3,
