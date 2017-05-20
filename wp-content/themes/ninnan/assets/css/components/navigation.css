@@ -63,6 +63,7 @@
 .Navigation-close {
   cursor: pointer;
   line-height: 1;
+  transition: opacity 200ms ease;
 }
 
 .Navigation-open {
@@ -136,9 +137,4 @@
 
 .Navigation.is-active .Navigation-close {
   opacity: 1;
-}
-
-.Navigation-open,
-.Navigation-close {
-  transition: opacity 200ms ease;
 }
