@@ -7,7 +7,9 @@
  * @param $settings Object Array of TinyMCE settings
  */
 add_filter('tiny_mce_before_init', function ($settings) {
-  $settings['toolbar1'] = 'formatselect,styleselect,bold,italic,blockquote,link,unlink,underline';
+  $toolbarButtons = array('formatselect','styleselect','bold','italic','blockquote','link','unlink','underline');
+
+  $settings['toolbar1'] = implode($toolbarButtons, ',');
   $settings['toolbar2'] = '';
 
   $settings['block_formats'] = "Paragraph=p; Heading 1=h1; Heading 2=h2; Heading 3=h3;";
@@ -24,4 +26,15 @@ add_filter('tiny_mce_before_init', function ($settings) {
   ));
 
   return $settings;
+});
+
+
+/* ACF */
+add_filter('acf/fields/wysiwyg/toolbars', function ($toolbars) {
+  $toolbarButtons = array('formatselect','styleselect','bold','italic','blockquote','link','unlink','underline');
+
+  $toolbars['Full'][1] = $toolbarButtons;
+  $toolbars['Full'][2] = array();
+
+	return $toolbars;
 });
