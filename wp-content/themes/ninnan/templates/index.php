@@ -14,7 +14,7 @@
         $forewords_image = wp_get_attachment_image_src($forewords_image);
         if ($forewords_image && $forewords_page) {
       ?>
-      <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5 u-xl-size1of6">
+      <div class="Grid-cell u-xs-size1of2 u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
         href="#forord">
