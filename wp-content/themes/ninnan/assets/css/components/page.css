@@ -3,6 +3,7 @@
   z-index: 1;
 }
 
+
 .Page-pagination {
   position: sticky;
   top: 0;
@@ -14,6 +15,7 @@
   float: right;
   text-align: right;
 }
+
 
 .Page-paginationInner {
   display: block;

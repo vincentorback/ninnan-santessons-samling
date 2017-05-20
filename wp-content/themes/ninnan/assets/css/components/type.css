@@ -1,9 +1,6 @@
-/** @define Type; weak */
-
 :root {
   --Type-spacing: 30px;
 }
-
 
 .Type {
   font-family: var(--font-apercu);

@@ -31,9 +31,11 @@
   align-items: center;
 }
 
+
 .Slideshow-itemImage {
   display: block;
 }
+
 
 .Slideshow-info {
   position: absolute;
@@ -56,7 +58,6 @@
     font-size: 1.5em;
   }
 }
-
 
 
 .Slideshow-nav {
@@ -93,7 +94,6 @@ html.touchevents .Slideshow-nav {
   cursor: e-resize;
   cursor: url('../images/arrow-right.png'), e-resize;
 }
-
 
 
 .Slideshow-buttonNav {
@@ -185,7 +185,7 @@ html.no-js .Slideshow--sticky {
 html.no-js .Slideshow--sticky .Slideshow-slider,
 html.no-js .Slideshow--sticky .Slideshow-item {
   height: auto;
-  min-height: none;
+  min-height: 0;
 }
 
 html.no-js .Slideshow--sticky .Slideshow-itemImage {

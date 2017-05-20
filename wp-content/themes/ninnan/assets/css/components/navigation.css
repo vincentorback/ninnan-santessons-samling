@@ -29,9 +29,11 @@
   margin: auto;
 }
 
+
 .Navigation-item {
   display: block;
 }
+
 
 .Navigation-link {
   display: block;
@@ -126,7 +128,6 @@
 .Navigation-close:hover .Navigation-closeText {
   opacity: .2;
 }
-
 
 
 .Navigation.is-active .Navigation-open {

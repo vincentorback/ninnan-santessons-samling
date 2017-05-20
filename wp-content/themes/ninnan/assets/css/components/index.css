@@ -10,6 +10,7 @@
   }
 }
 
+
 .Index-itemImage {
   display: block;
   margin: 0 auto;
@@ -17,9 +18,11 @@
   backface-visibility: hidden;
 }
 
+
 .Index-itemContent {
   position: relative;
 }
+
 
 .Index-itemInfo {
   position: absolute;
@@ -54,6 +57,7 @@ html.touchevents .Index-itemInfo {
   opacity: 1;
   font-size: 1em;
 }
+
 
 .Index-itemTitle {
   margin-top: .5em;

@@ -20,9 +20,11 @@
   backface-visibility: hidden;
 }
 
+
 .Intro-title {
   word-spacing: 100%;
 }
+
 
 .Intro-date {
   align-self: flex-end;

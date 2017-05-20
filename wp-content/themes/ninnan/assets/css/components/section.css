@@ -39,7 +39,6 @@
 }
 
 
-
 .Section-scrollDown {
   position: absolute;
   bottom: 0;
@@ -57,7 +56,6 @@
 html.no-touchevents .Section-scrollDown:hover {
   transform: translateY(5px);
 }
-
 
 
 .Section-chapterIntro {
@@ -84,7 +82,6 @@ html.no-touchevents .Section-scrollDown:hover {
 }
 
 
-
 .Section-title {
   font-size: 1.5em;
   margin-bottom: var(--site-spacing-sm);
@@ -98,36 +95,12 @@ html.no-touchevents .Section-scrollDown:hover {
   }
 }
 
-.Section-title span {
-  display: block;
-}
 
-
-
-.Section--text .Section-title {
-  padding-left: var(--text-indent);
-  text-transform: uppercase;
-}
-
-
-
-.Section--intro {
-  padding: var(--site-spacing-md) 0;
-}
-
-@media (--md-viewport) {
-  .Section--intro {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
+/* Themes */
 
 .Section--noPad {
   padding: 0;
 }
-
 
 .Section--gray {
   background: var(--color-gray);
@@ -146,6 +119,25 @@ html.no-touchevents .Section-scrollDown:hover {
   background: #fff;
 }
 
+
+.Section--text .Section-title {
+  padding-left: var(--text-indent);
+  text-transform: uppercase;
+}
+
+
+.Section--intro {
+  padding: var(--site-spacing-md) 0;
+}
+
+@media (--md-viewport) {
+  .Section--intro {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 
 .Section--about,
@@ -179,7 +171,6 @@ html.no-touchevents .Section-scrollDown:hover {
 }
 
 
-
 /* Images */
 
 .Section--images {
@@ -198,7 +189,6 @@ html.no-touchevents .Section-scrollDown:hover {
     margin-left: 100px;
   }
 }
-
 
 
 /* Letter */
@@ -242,7 +232,6 @@ html.no-touchevents .Section-scrollDown:hover {
     padding-left: 200px;
   }
 }
-
 
 
 /* Small */

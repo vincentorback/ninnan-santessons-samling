@@ -3,23 +3,6 @@
   text-align: center;
 }
 
-.Figure-image {
-  margin: 0 auto;
-  display: block;
-}
-
-.Figure-caption {
-  padding: 1em;
-  font-size: 1.2em;
-}
-
-@media (--md-viewport) {
-  .Figure-caption {
-    font-size: 1.5em;
-  }
-}
-
-
 .Figure:not(:last-child) {
   margin-bottom: var(--site-spacing-sm);
 }
@@ -45,5 +28,23 @@
 @media (--xl-viewport) {
   .Figure:not(:last-child) {
     margin-bottom: var(--site-spacing-xl);
+  }
+}
+
+
+.Figure-image {
+  margin: 0 auto;
+  display: block;
+}
+
+
+.Figure-caption {
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+@media (--md-viewport) {
+  .Figure-caption {
+    font-size: 1.5em;
   }
 }

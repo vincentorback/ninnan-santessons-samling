@@ -84,11 +84,6 @@ ul {
   -webkit-text-fill-color: currentColor;
 }
 
-::placeholder {
-  color: inherit;
-  opacity: .7;
-}
-
 /**
  * Allow only vertical user resizing
  */
