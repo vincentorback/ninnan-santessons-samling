@@ -17,13 +17,17 @@
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
-        href="#forord">
+        href="#<?php echo $forewords_page->post_name; ?>">
           <div class="Index-itemContent">
-            <img class="Index-itemImage js-lazy" data-src="<?php echo $forewords_image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img
+              class="Index-itemImage js-lazy"
+              data-src="<?php echo $forewords_image[0]; ?>"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $forewords_image[0]; ?>"></noscript>
             <div class="Index-itemInfo">
               <div>
-                <p>Förord</p>
+                <p><?php echo $forewords_page->post_title; ?></p>
               </div>
             </div>
           </div>
@@ -66,7 +70,11 @@
         class="Index-item"
         href="#page-<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
           <div class="Index-itemContent">
-            <img class="Index-itemImage js-lazy" data-src="<?php echo $image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img
+              class="Index-itemImage js-lazy"
+              data-src="<?php echo $image[0]; ?>"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
               <div>
@@ -105,7 +113,11 @@
         class="Index-item"
         href="#page-<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
           <div class="Index-itemContent">
-            <img class="Index-itemImage js-lazy" data-src="<?php echo $image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img
+              class="Index-itemImage js-lazy"
+              data-src="<?php echo $image[0]; ?>"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
               <div>
@@ -139,13 +151,17 @@
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
-        href="#efterord">
+        href="#<?php echo $afterwords_page->post_name; ?>">
           <div class="Index-itemContent">
-            <img class="Index-itemImage js-lazy" data-src="<?php echo $afterwords_image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img
+              class="Index-itemImage js-lazy"
+              data-src="<?php echo $afterwords_image[0]; ?>"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $afterwords_image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
               <div>
-                <p>Efterord</p>
+                <p><?php echo $afterwords_page->post_title; ?></p>
               </div>
             </div>
           </div>
@@ -171,11 +187,15 @@
         class="Index-item"
         href="#about">
           <div class="Index-itemContent">
-            <img class="Index-itemImage js-lazy" data-src="<?php echo $about_image[0]; ?>" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <img
+              class="Index-itemImage js-lazy"
+              data-src="<?php echo $about_image[0]; ?>"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $about_image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
               <div>
-                <p>Om projektet</p>
+                <p><?php echo $about_page->post_title; ?></p>
               </div>
             </div>
           </div>

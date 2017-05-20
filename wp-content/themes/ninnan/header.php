@@ -39,6 +39,13 @@
     </a>
   </header>
 
+  <?php
+  $about_page = getCustomPage('Om projektet');
+  if ($about_page) {
+    $presskit = get_field('presskit', $about_page->ID);
+  }
+  ?>
+
   <nav class="Navigation js-nav" id="navigation" aria-expanded="false" role="navigation">
     <ul class="Navigation-list">
       <li class="Navigation-item">
@@ -46,23 +53,20 @@
           <span class="Navigation-linkInner">Index</span>
         </a>
       </li>
+      <?php if ($about_page) { ?>
       <li class="Navigation-item">
-        <a class="Navigation-link" href="#about">
-          <span class="Navigation-linkInner">Om projektet</span>
+        <a class="Navigation-link" href="#<?php echo $about_page->post_name; ?>">
+          <span class="Navigation-linkInner"><?php echo $about_page->post_title; ?></span>
         </a>
       </li>
-      <?php
-      $about_page = getCustomPage('Om projektet');
-      if ($about_page) {
-        $presskit = get_field('presskit', $about_page->ID);
-        if ($presskit) {
-      ?>
+      <?php } ?>
+      <?php if ($presskit) { ?>
       <li class="Navigation-item">
         <a class="Navigation-link" href="<?php echo $presskit; ?>" download>
           <span class="Navigation-linkInner">Presskit</span>
         </a>
       </li>
-      <?php } } ?>
+      <?php } ?>
     </ul>
 
     <button class="Navigation-close js-navToggle" type="button" aria-controls="navigation">

@@ -5,10 +5,10 @@ if ($about_page) {
   $text = $about_page->post_content;
   $thanks = get_field('thanks', $about_page->ID);
 ?>
-<section class="Section Section--gray Section--about" id="about">
+<section class="Section Section--gray Section--about" id="<?php echo $about_page->post_name; ?>">
   <div class="Site-container">
 
-    <h1 class="Section-title">Om projektet</h1>
+    <h1 class="Section-title"><?php echo $about_page->post_title; ?></h1>
 
     <div class="Grid Grid--withGutter">
       <div class="Grid-cell u-md-size2of3">
