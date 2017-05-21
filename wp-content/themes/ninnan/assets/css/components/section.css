@@ -171,6 +171,16 @@ html.no-touchevents .Section-scrollDown:hover {
 }
 
 
+
+@media (--lg-viewport) {
+  .Section--about .Section-text {
+    padding-left: 100px;
+    max-width: calc(var(--site-width-narrow) + 100px);
+  }
+}
+
+
+
 /* Images */
 
 .Section--images {
