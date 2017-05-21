@@ -7,15 +7,23 @@
   <meta name="description" content="Ninnan Santessons är min gammelmormor, min pappas mormor, och under min uppväxt har jag fått fragmentariska glimtar av hennes liv. Det här projektet är mitt försök att lära känna henne — och hennes tid — lite bättre.">
   <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style-min.css" rel="stylesheet">
   <?php wp_head(); ?>
+  <meta property="og:title" content="Ninnan Santessons Samling">
+  <meta property="og:description" content="Ninnan Santessons är min gammelmormor, min pappas mormor, och under min uppväxt har jag fått fragmentariska glimtar av hennes liv. Det här projektet är mitt försök att lära känna henne — och hennes tid — lite bättre.">
+  <meta property="og:url" content="http://ninnan-santessons-samling.se">
+  <meta property="og:site_name" content="Ninnan Santessons Ninnan Santesson">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://ninnan-santessons-samling.se/wp-content/uploads/2017/05/linnea_carlson_ninnansantesson_1-1000x1000.jpg">
+  <meta name="theme-color" content="#111">
   <script>
-  if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
-    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    // ga('create', 'UA-XXXXXX-1', 'auto');
-    // ga('send', 'pageview');
-  }
+  /* if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-XXXXXX-1', 'auto');
+    ga('send', 'pageview');
+  } */
   </script>
 </head>
 
