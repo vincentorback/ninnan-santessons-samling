@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="Ninnan Santessons Ninnan Santesson">
   <meta property="og:locale" content="sv_SE">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://ninnan-santessons-samling.se/wp-content/uploads/2017/05/linnea_carlson_ninnansantesson_1-1000x1000.jpg">
+  <meta property="og:image" content="http://ninnan-santessons-samling.se/wp-content/uploads/2017/05/linnea_carlson_ninnansantesson_4-1000x892.jpg">
   <meta name="theme-color" content="#111">
   <script>
   /* if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
