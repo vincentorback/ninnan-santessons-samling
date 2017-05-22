@@ -78,12 +78,18 @@
 /* Links */
 
 .Type a {
-  outline: 0;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .Type a:hover,
-.Type a:focus,
+.Type a:focus {
+  text-decoration: underline;
+}
+
+.Type a::selection {
+  background: blue;
+}
+
 .Type a[href^="http"]:visited {
   opacity: .7;
 }
@@ -154,6 +160,15 @@
 .Type--noIndent p {
   margin: var(--Type-spacing) 0;
   text-indent: 0 !important;
+}
+
+.Type--noIndent a {
+  text-decoration: underline;
+}
+
+.Type--noIndent a:hover,
+.Type--noIndent a:visited {
+  opacity: .7;
 }
 
 
