@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ninnan Santessons Samling</title>
   <meta name="description" content="Ninnan Santessons är min gammelmormor, min pappas mormor, och under min uppväxt har jag fått fragmentariska glimtar av hennes liv. Det här projektet är mitt försök att lära känna henne — och hennes tid — lite bättre.">
-  <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style-min.css" rel="stylesheet">
+  <?php $theme_url = get_template_directory_uri(); ?>
+  <link href="<?php echo $theme_url ?>/assets/css/style-min.css" rel="stylesheet">
   <?php wp_head(); ?>
   <meta property="og:title" content="Ninnan Santessons Samling">
   <meta property="og:description" content="Ninnan Santessons är min gammelmormor, min pappas mormor, och under min uppväxt har jag fått fragmentariska glimtar av hennes liv. Det här projektet är mitt försök att lära känna henne — och hennes tid — lite bättre.">
@@ -13,7 +14,7 @@
   <meta property="og:site_name" content="Ninnan Santessons Ninnan Santesson">
   <meta property="og:locale" content="sv_SE">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://ninnan-santessons-samling.se/wp-content/uploads/2017/05/linnea_carlson_ninnansantesson_4-1000x892.jpg">
+  <meta property="og:image" content="<?php echo $theme_url; ?>/assets/images/share.jpg">
   <meta name="theme-color" content="#111">
   <script>
   /* if (!(window.doNotTrack === '1' || window.doNotTrack === 'yes' || navigator.doNotTrack === 'yes' || navigator.doNotTrack === '1' || navigator.msDoNotTrack === '1')) {
