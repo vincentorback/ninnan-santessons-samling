@@ -24,17 +24,23 @@ if ($images) {
       <?php
       if ($images) {
         foreach( $images as $image ) {
-          if ($image['sizes']['large']) {
       ?>
       <figure class="Figure" id="<?php echo $image['title']; ?>">
-        <img class="Figure-image js-lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
+        <img
+          class="Figure-image js-lazy"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          sizes="100vw"
+          data-srcset="<?php echo $image['sizes']['large']; ?> 1600w,
+            <?php echo $image['sizes']['medium']; ?> 1000w,
+            <?php echo $image['sizes']['thumbnail']; ?> 500w"
+          data-src="<?php echo $image['sizes']['large']; ?>"
+          alt="<?php echo $image['alt']; ?>">
         <noscript><img class="Figure-image" src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>"></noscript>
         <?php if ($image['caption']) { ?>
         <figcaption class="Figure-caption"><?php echo $image['caption']; ?></figcaption>
         <?php } ?>
       </figure>
       <?php
-          }
         }
       }
       ?>
