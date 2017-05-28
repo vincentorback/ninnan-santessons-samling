@@ -1,6 +1,7 @@
 .DS_Store
 
-wp-config*.php
+wp-config.php
+wp-config-prod.php
 
 wp/*
 !wp/.gitkeep
