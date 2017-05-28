@@ -170,6 +170,7 @@ html.no-js .Slideshow-buttonNav {
     top: 0;
     min-height: 500px;
     padding: 0;
+    backface-visibility: hidden;
   }
 
   .Slideshow--sticky .Slideshow-slider {
