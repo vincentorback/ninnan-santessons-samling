@@ -67,7 +67,7 @@ if ($about_page) {
 
         <?php if ($thanks) { ?>
         <div class="Section-text">
-          <div class="Type Type--noIndent">
+          <div class="Type">
             <?php echo apply_filters('the_content', $thanks); ?>
           </div>
         </div>

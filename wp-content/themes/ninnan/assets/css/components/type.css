@@ -157,20 +157,6 @@
   text-indent: var(--text-indent);
 }
 
-.Type--noIndent p {
-  margin: var(--Type-spacing) 0;
-  text-indent: 0 !important;
-}
-
-.Type--noIndent a {
-  text-decoration: underline;
-}
-
-.Type--noIndent a:hover,
-.Type--noIndent a:visited {
-  opacity: .7;
-}
-
 
 /* Divider */
 
