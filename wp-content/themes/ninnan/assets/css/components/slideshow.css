@@ -111,6 +111,7 @@ html.touchevents .Slideshow-nav {
   justify-content: center;
 }
 
+html.touchevents .Slideshow-buttonNav,
 html.no-js .Slideshow-buttonNav {
   display: none;
 }

@@ -145,7 +145,7 @@
                   slideshowEl.classList.add(activeClass)
                   var slideshow = this
 
-                  if (slideshowNavButtons) {
+                  if (!Modernizr.touchevents && slideshowNavButtons) {
                     if (slideshowNavButtons[slideshow.page]) {
                       slideshowNavButtons[slideshow.page].classList.add(activeClass)
                     }
