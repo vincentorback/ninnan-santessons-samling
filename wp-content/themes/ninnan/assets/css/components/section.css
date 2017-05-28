@@ -122,6 +122,7 @@ html.no-touchevents .Section-scrollDown:hover {
 
 .Section--white {
   background: #fff;
+  color: var(--color-black);
 }
 
 
