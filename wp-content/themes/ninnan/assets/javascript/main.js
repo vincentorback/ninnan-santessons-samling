@@ -15,6 +15,19 @@
       Ninnan.scrollButtons()
       Ninnan.chapters()
       Ninnan.linkJump()
+      Ninnan.scrollToUrl()
+    },
+
+    scrollToUrl: function () {
+      var pathname = window.location.pathname.replace(/\//g, '')
+      pathname = pathname.replace('wp', '')
+      var sectionEl = doc.getElementById(pathname)
+
+      if (sectionEl) {
+        window.setTimeout(function () {
+          sectionEl.scrollIntoView()
+        })
+      }
     },
 
     linkJump: function () {
