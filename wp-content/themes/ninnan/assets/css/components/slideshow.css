@@ -194,10 +194,17 @@ html.no-js .Slideshow--sticky .Slideshow-itemImage {
 }
 
 
+
+/* Slideshow Small */
+
 .Slideshow--small,
 .Slideshow--small .Slideshow-slider,
 .Slideshow--small .Slideshow-itemImage {
   max-height: 100vh;
+}
+
+.Slideshow--small .Slideshow-item {
+  height: auto !important;
 }
 
 html.no-js .Slideshow--small,
