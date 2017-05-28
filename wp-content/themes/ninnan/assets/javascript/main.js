@@ -48,8 +48,6 @@
             window.setTimeout(function () {
               targetEl.scrollIntoView()
             }, 200)
-
-            e.preventDefault()
           }
         })
       })
