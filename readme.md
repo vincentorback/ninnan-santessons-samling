@@ -1,7 +1,7 @@
 # Ninnan Santessons Samling
 
 ## Install
-1. Download and install WordPress into the `/wp` folder.
+1. [Download](https://wordpress.org/download/) and install WordPress into the `/wp` folder.
 2. Set up and activate the Ninnan theme.
 3. Import `acf-data.json` to your ACF installation.
 
