@@ -1,20 +1,16 @@
-wp-config.php
-wp-config-prod.php
+.DS_Store
+
+wp-config*.php
 
 wp/*
 !wp/.gitkeep
 
 wp-content/plugins/*
-wp-content/languages/plugins
 !wp-content/plugins/.gitkeep
-
+wp-content/languages
 wp-content/uploads
 
-
 wp-content/themes/ninnan/**/*-min.*
-
 node_modules
-
-.DS_Store
 
 .htaccess
