@@ -13,7 +13,7 @@
       if ($forewords_page) {
         $forewords_pagination = get_field('pagination', $forewords_page->ID);
         $forewords_image = get_field('thumbnail', $forewords_page->ID);
-        $forewords_image = wp_get_attachment_image_src($forewords_image);
+        $forewords_image = wp_get_attachment_image_src($forewords_image, 'thumbnail');
         if ($forewords_image && $forewords_page) {
       ?>
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
@@ -26,7 +26,7 @@
               data-src="<?php echo $forewords_image[0]; ?>"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
               alt="">
-            <noscript><img class="Index-itemImage" src="<?php echo $forewords_image[0]; ?>"></noscript>
+            <noscript><img class="Index-itemImage" src="<?php echo $forewords_image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
               <div>
                 <p><?php echo $forewords_page->post_title; ?></p>
@@ -61,7 +61,7 @@
           $thumbnail = get_field('thumbnail');
 
           if ($thumbnail && $title && $pagination) {
-            $image = wp_get_attachment_image_src($thumbnail);
+            $image = wp_get_attachment_image_src($thumbnail, 'thumbnail');
 
       ?>
 
@@ -108,7 +108,7 @@
 
           if ($thumbnail && $title && $pagination) {
             $url_safe_title = selectorSafeString($title);
-            $image = wp_get_attachment_image_src($thumbnail);
+            $image = wp_get_attachment_image_src($thumbnail, 'thumbnail');
       ?>
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
@@ -147,7 +147,7 @@
         if ($afterwords_page) {
           $afterwords_pagination = get_field('pagination', $afterwords_page->ID);
           $afterwords_image = get_field('thumbnail', $afterwords_page->ID);
-          $afterwords_image = wp_get_attachment_image_src($afterwords_image);
+          $afterwords_image = wp_get_attachment_image_src($afterwords_image, 'thumbnail');
           if ($afterwords_image && $afterwords_page) {
       ?>
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
@@ -181,7 +181,7 @@
         if ($about_page) {
           $about_pagination = get_field('pagination', $about_page->ID);
           $about_image = get_field('thumbnail', $about_page->ID);
-          $about_image = wp_get_attachment_image_src($about_image);
+          $about_image = wp_get_attachment_image_src($about_image, 'thumbnail');
           if ($about_image && $about_page) {
       ?>
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
