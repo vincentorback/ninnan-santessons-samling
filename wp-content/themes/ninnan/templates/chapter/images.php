@@ -4,15 +4,18 @@ if ($images) {
   $pagination = get_sub_field('paginering');
   $title = get_sub_field('title');
   $url_safe_title = selectorSafeString($title);
+  $section_id = $pagination . '-' . $url_safe_title;
 ?>
 <section
   class="Section Section--images Section--gray js-chapterSection"
   data-pagination="<?php echo $pagination; ?>"
-  id="page-<?php echo $pagination; ?>-<?php echo $url_safe_title; ?>">
+  id="<?php echo $section_id; ?>">
 
   <?php if ($title) { ?>
   <div class="Section Section--small">
-    <h1 class="Section-title"><?php echo $title; ?></h1>
+    <h1 class="Section-title">
+      <a class="Section-titleLink" href="#<?php echo $section_id; ?>"><?php echo $title; ?></a>
+    </h1>
   </div>
   <?php } ?>
 

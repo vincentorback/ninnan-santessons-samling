@@ -1,6 +1,8 @@
 <section class="Section Section--index Section--gray" id="index">
   <div class="Site-container">
-    <h1 class="Section-title">Index</h1>
+    <h1 class="Section-title">
+      <a class="Section-titleLink" href="#index">Index</a>
+    </h1>
 
     <div class="Index Grid">
 
@@ -68,7 +70,7 @@
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
-        href="#page-<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
+        href="#<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
           <div class="Index-itemContent">
             <img
               class="Index-itemImage js-lazy"
@@ -111,7 +113,7 @@
       <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
-        href="#page-<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
+        href="#<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
           <div class="Index-itemContent">
             <img
               class="Index-itemImage js-lazy"

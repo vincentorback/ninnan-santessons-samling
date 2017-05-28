@@ -3,18 +3,21 @@ $pagination = get_sub_field('paginering');
 $title = get_sub_field('text_title');
 $text = get_sub_field('text');
 $url_safe_title = selectorSafeString($title);
+$section_id = $pagination . '-' . $url_safe_title;
 ?>
 
 <section
   class="Section Section--letter Grid Grid--equalHeight js-chapterSection"
   data-pagination="<?php echo $pagination; ?>"
-  id="page-<?php echo $pagination; ?>-<?php echo $url_safe_title; ?>">
+  id="<?php echo $section_id; ?>">
   <div class="Grid-cell u-md-size1of2">
     <div class="u-size1of1">
 
       <?php if ($title) { ?>
       <div class="Section Section--white Section--small">
-        <h1 class="Section-title"><?php echo $title; ?></h1>
+        <h1 class="Section-title">
+          <a class="Section-titleLink" href="#<?php echo $section_id; ?>"><?php echo $title; ?></a>
+        </h1>
       </div>
       <?php } ?>
 

@@ -13,7 +13,9 @@ if ($afterwords_page) {
 
   <section class="Section Section--text" id="<?php echo $afterwords_page->post_name; ?>">
     <div class="Site-container Site-container--narrow">
-      <h1 class="Section-title"><?php echo $afterwords_page->post_title; ?></h1>
+      <h1 class="Section-title">
+        <a class="Section-titleLink" href="#<?php echo $afterwords_page->post_name; ?>"><?php echo $afterwords_page->post_title; ?></a>
+      </h1>
       <div class="Type">
         <?php echo apply_filters('the_content', $afterwords_page->post_content); ?>
       </div>
