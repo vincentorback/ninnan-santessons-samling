@@ -72,6 +72,7 @@
   align-items: stretch;
 }
 
+.Slideshow:not(.is-active) .Slideshow-nav,
 html.no-js .Slideshow-nav,
 html.touchevents .Slideshow-nav {
   display: none;
@@ -109,8 +110,11 @@ html.touchevents .Slideshow-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  cursor: default;
 }
 
+.Slideshow:not(.is-active) .Slideshow-buttonNav,
 html.touchevents .Slideshow-buttonNav,
 html.no-js .Slideshow-buttonNav {
   display: none;
