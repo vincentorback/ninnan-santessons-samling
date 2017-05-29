@@ -92,6 +92,10 @@
       var captionSelector = '.js-slideshowCaption'
       var itemSelector = '.js-slideshowItem'
       var sliderSelector = '.js-slideshowSlider'
+      var navItemSelector = '.js-slideshowNavItem'
+      var leftButtonSelector = '.js-slideshowLeft'
+      var rightButtonSelector = '.js-slideshowRight'
+
       var captionText = ''
       var reversedClass = 'is-reversed'
       var viewportHeight = Math.max(doc.documentElement.clientHeight, window.innerHeight || 0)
@@ -101,6 +105,7 @@
         selector: lazySelector,
         successClass: loadedClass,
         errorClass: errorClass,
+        loadInvisible: true,
         success: function (loadedImage) {
           var slideshowId = loadedImage.getAttribute('data-slideshow')
 
@@ -122,127 +127,139 @@
                 dragend: null
               }
 
-              if (slides > 1) {
-                window.setTimeout(function () {
-                  var notLoaded = Array.from(slideshowEl.querySelectorAll(lazySelector + ':not(.' + loadedClass + ')'))
-
-                  notLoaded = notLoaded.filter(function (notLoadedImage) {
-                    if (
-                      (notLoadedImage.getAttribute('data-src') !== loadedImage.getAttribute('src')) &&
-                      (notLoadedImage.classList.contains(loadedClass) === false)
-                    ) {
-                      return notLoadedImage
-                    }
-                  })
-
-                  lazyImages.load(notLoaded, true)
-                }, 500)
-              }
+              slideshows[slideshowId].notLoadedInterval = window.setInterval(function () {
+                if (slideshows[slideshowId].loaded >= slideshows[slideshowId].slides) {
+                  window.clearInterval(slideshows[slideshowId].notLoadedInterval)
+                } else {
+                  loadNotLoaded(slideshowEl)
+                }
+              }, 1000)
             }
 
             slideshows[slideshowId].loaded += 1
 
-            if (
-              slideshows[slideshowId].slides > 1 &&
-              slideshows[slideshowId].slides === slideshows[slideshowId].loaded
-            ) {
-              var slideshowNavButtons = slideshowEl.querySelectorAll('.js-slideshowNavItem')
-              var slideshowLeftButton = slideshowEl.querySelector('.js-slideshowLeft')
-              var slideshowRightButton = slideshowEl.querySelector('.js-slideshowRight')
-
-              slideshows[slideshowId].dragend = new Dragend(slideshows[slideshowId].sliderEl, {
-                pageClass: 'js-slideshowItem',
-                afterInitialize: function () {
-                  slideshowEl.classList.add(activeClass)
-                  var slideshow = this
-
-                  if (!Modernizr.touchevents && slideshowNavButtons) {
-                    if (slideshowNavButtons[slideshow.page]) {
-                      slideshowNavButtons[slideshow.page].classList.add(activeClass)
-                    }
-
-                    Array.from(slideshowNavButtons, function (buttonEl) {
-                      buttonEl.addEventListener('click', function (e) {
-                        slideshow.scrollToPage(parseInt(buttonEl.getAttribute('data-index')))
-
-                        buttonEl.classList.add(activeClass)
-
-                        e.preventDefault()
-                      })
-                    })
-                  }
-
-                  if (!Modernizr.touchevents && slideshowLeftButton && slideshowRightButton) {
-                    slideshowLeftButton.addEventListener('click', function (e) {
-                      if (slideshow.page !== 0) {
-                        slideshow.scrollToPage(slideshow.page)
-                      } else {
-                        // Reverse
-                        slideshow.scrollToPage(slideshow.page + 2)
-                      }
-
-                      e.preventDefault()
-                    })
-
-                    slideshowRightButton.addEventListener('click', function (e) {
-                      if ((slideshow.page + 1) !== slideshow.pagesCount) {
-                        slideshow.scrollToPage(slideshow.page + 2)
-                      } else {
-                        // Reverse
-                        slideshow.scrollToPage(slideshow.page)
-                      }
-
-                      e.preventDefault()
-                    })
-                  }
-
-                  Waypoint.refreshAll()
-                },
-                onSwipeEnd: function (sliderEl, slideEl) {
-                  var slideshow = this
-
-                  slideshowLeftButton.classList.toggle(reversedClass, slideshow.page === 0)
-                  slideshowRightButton.classList.toggle(reversedClass, (slideshow.page + 1) === slideshow.pagesCount)
-
-                  if (paginationEl) {
-                    paginationEl.innerText = (slideshow.page + 1) + '/' + slideshow.pagesCount
-                  }
-
-                  captionText = slideEl.getAttribute('data-caption') || ''
-
-                  if (captionEl) {
-                    captionEl.innerText = captionText
-                  }
-
-                  if (slideshowNavButtons) {
-                    slideshowNavButtons = Array.from(slideshowNavButtons)
-
-                    slideshowNavButtons.forEach(function (buttonEl) {
-                      buttonEl.classList.remove(activeClass)
-                    })
-
-                    if (slideshowNavButtons[slideshow.page]) {
-                      slideshowNavButtons[slideshow.page].classList.add(activeClass)
-                    }
-                  }
-                }
-              })
-            }
-
-            var paginationEl = slideshowEl.querySelector(paginationSelector)
-            if (paginationEl) {
-              paginationEl.innerText = '1/' + slideshows[slideshowId].slides
-            }
-
-            var captionEl = slideshowEl.querySelector(captionSelector)
-            if (captionEl) {
-              captionEl.innerText = slideshows[slideshowId].sliderEl.querySelector(itemSelector).getAttribute('data-caption') || ''
+            if (slideshows[slideshowId].loaded >= slideshows[slideshowId].slides) {
+              loadSlideshow(slideshows[slideshowId])
             }
           }
 
           Waypoint.refreshAll()
         }
       })
+
+      function loadSlideshow (slideshow) {
+        if (
+          slideshow.slides > 1 &&
+          slideshow.slides === slideshow.loaded
+        ) {
+          var slideshowNavButtons = slideshow.el.querySelectorAll(navItemSelector)
+          var slideshowLeftButton = slideshow.el.querySelector(leftButtonSelector)
+          var slideshowRightButton = slideshow.el.querySelector(rightButtonSelector)
+
+          slideshow.dragend = new Dragend(slideshow.sliderEl, {
+            pageClass: 'js-slideshowItem',
+            afterInitialize: function () {
+              slideshow.el.classList.add(activeClass)
+
+              var dragend = this
+
+              if (!Modernizr.touchevents && slideshowNavButtons) {
+                if (slideshowNavButtons[dragend.page]) {
+                  slideshowNavButtons[dragend.page].classList.add(activeClass)
+                }
+
+                Array.from(slideshowNavButtons, function (buttonEl) {
+                  buttonEl.addEventListener('click', function (e) {
+                    dragend.scrollToPage(parseInt(buttonEl.getAttribute('data-index')))
+
+                    buttonEl.classList.add(activeClass)
+
+                    e.preventDefault()
+                  })
+                })
+              }
+
+              if (!Modernizr.touchevents && slideshowLeftButton && slideshowRightButton) {
+                slideshowLeftButton.addEventListener('click', function (e) {
+                  if (dragend.page !== 0) {
+                    dragend.scrollToPage(dragend.page)
+                  } else {
+                    // Reverse
+                    dragend.scrollToPage(dragend.page + 2)
+                  }
+
+                  e.preventDefault()
+                })
+
+                slideshowRightButton.addEventListener('click', function (e) {
+                  if ((dragend.page + 1) !== dragend.pagesCount) {
+                    dragend.scrollToPage(dragend.page + 2)
+                  } else {
+                    // Reverse
+                    dragend.scrollToPage(dragend.page)
+                  }
+
+                  e.preventDefault()
+                })
+              }
+
+              Waypoint.refreshAll()
+            },
+            onSwipeEnd: function (sliderEl, slideEl) {
+              var dragend = this
+
+              slideshowLeftButton.classList.toggle(reversedClass, dragend.page === 0)
+              slideshowRightButton.classList.toggle(reversedClass, (dragend.page + 1) === dragend.pagesCount)
+
+              if (paginationEl) {
+                paginationEl.innerText = (dragend.page + 1) + '/' + dragend.pagesCount
+              }
+
+              captionText = slideEl.getAttribute('data-caption') || ''
+
+              if (captionEl) {
+                captionEl.innerText = captionText
+              }
+
+              if (slideshowNavButtons) {
+                slideshowNavButtons = Array.from(slideshowNavButtons)
+
+                slideshowNavButtons.forEach(function (buttonEl) {
+                  buttonEl.classList.remove(activeClass)
+                })
+
+                if (slideshowNavButtons[dragend.page]) {
+                  slideshowNavButtons[dragend.page].classList.add(activeClass)
+                }
+              }
+            }
+          })
+        }
+
+        var paginationEl = slideshow.el.querySelector(paginationSelector)
+
+        if (paginationEl) {
+          paginationEl.innerText = '1/' + slideshow.slides
+        }
+
+        var captionEl = slideshow.el.querySelector(captionSelector)
+
+        if (captionEl) {
+          captionEl.innerText = slideshow.sliderEl.querySelector(itemSelector).getAttribute('data-caption') || ''
+        }
+      }
+
+      function loadNotLoaded (slideshowEl) {
+        var notLoaded = Array.from(slideshowEl.querySelectorAll(lazySelector + ':not(.' + loadedClass + ')'))
+
+        notLoaded = notLoaded.filter(function (notLoadedImage) {
+          if (notLoadedImage.classList.contains(loadedClass) === false) {
+            return notLoadedImage
+          }
+        })
+
+        lazyImages.load(notLoaded, true)
+      }
 
       window.addEventListener('resize', function () {
         viewportHeight = Math.max(doc.documentElement.clientHeight, window.innerHeight || 0)
