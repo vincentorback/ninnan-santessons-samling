@@ -16,7 +16,7 @@
         $forewords_image = wp_get_attachment_image_src($forewords_image, 'thumbnail');
         if ($forewords_image && $forewords_page) {
       ?>
-      <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
+      <div class="Grid-cell u-xs-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
         href="#<?php echo $forewords_page->post_name; ?>">
@@ -67,7 +67,7 @@
 
 
       <!-- Kapitel intro -->
-      <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
+      <div class="Grid-cell u-xs-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
         href="#<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
@@ -110,7 +110,7 @@
             $url_safe_title = selectorSafeString($title);
             $image = wp_get_attachment_image_src($thumbnail, 'thumbnail');
       ?>
-      <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
+      <div class="Grid-cell u-xs-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
         href="#<?php echo $pagination; ?>-<?php echo $url_safe_title ?>">
@@ -150,7 +150,7 @@
           $afterwords_image = wp_get_attachment_image_src($afterwords_image, 'thumbnail');
           if ($afterwords_image && $afterwords_page) {
       ?>
-      <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
+      <div class="Grid-cell u-xs-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
         href="#<?php echo $afterwords_page->post_name; ?>">
@@ -184,7 +184,7 @@
           $about_image = wp_get_attachment_image_src($about_image, 'thumbnail');
           if ($about_image && $about_page) {
       ?>
-      <div class="Grid-cell u-size1of2 u-md-size1of3 u-lg-size1of5">
+      <div class="Grid-cell u-xs-size1of2 u-md-size1of3 u-lg-size1of5">
         <a
         class="Index-item"
         href="#about">

@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "normalize.css": "^7.0.0",
-    "suitcss-utils-size": "^2.0.0",
     "suitcss-components-grid": "^3.0.3"
   },
   "devDependencies": {

@@ -1,7 +1,38 @@
+.u-noIndent {
+  text-indent: 0 !important;
+}
+
 .u-size1of1 {
   width: 100%;
 }
 
-.u-noIndent {
-  text-indent: 0 !important;
+@media (--xs-viewport) {
+  .u-xs-size1of2 {
+    flex-basis: auto !important;
+    width: 50% !important;
+  }
+}
+
+@media (--md-viewport) {
+  .u-md-size1of2 {
+    flex-basis: auto !important;
+    width: 50%;
+  }
+
+  .u-md-size1of3 {
+    flex-basis: auto !important;
+    width: calc(100% * 1 / 3) !important;
+  }
+
+  .u-md-size2of3 {
+    flex-basis: auto !important;
+    width: calc(100% * 2 / 3) !important;
+  }
+}
+
+@media (--lg-viewport) {
+  .u-lg-size1of5 {
+    flex-basis: auto !important;
+    width: 20% !important;
+  }
 }

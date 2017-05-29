@@ -25,7 +25,6 @@ Author: Vincent Orback
 @import "components/type";
 
 /* Utilities */
-@import "suitcss-utils-size";
 @import "utilities/misc";
 
 /* Print */
