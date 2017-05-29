@@ -12,16 +12,13 @@
 :root {
   --color-gray: #d0d0d0;
   --color-black: #111;
-
   --font-apercu: "apercu-regular", sans-serif;
   --font-apercu-mono: "apercu-mono", sans-serif;
   --text-lineheight-small: 1.2;
   --text-lineheight-large: 1.4;
   --text-indent: 3.5rem;
-
   --site-width: 1600px;
   --site-width-narrow: 560px;
-
   --site-spacing-percent: 7vw;
   --site-spacing-sm: 60px;
   --site-spacing-md: 100px;

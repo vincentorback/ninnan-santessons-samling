@@ -53,7 +53,7 @@
 
 @custom-selector :--Type-block-elements
   img, video, iframe,
-  blockquote, p, pre, ul, ol, hr,
+  blockquote, p, ul, ol, hr,
   h1, h2, h3;
 
 @custom-selector :--Type-custom-heading-123
@@ -158,19 +158,6 @@
 }
 
 
-/* Divider */
-
-.Type hr {
-  height: 1px;
-  border: 0;
-  width: 100%;
-  background: currentColor;
-  margin: calc(var(--Type-spacing) * 2) auto;
-  transform: rotate(-1deg);
-  transform-origin: top center;
-}
-
-
 /* Blockquote */
 
 .Type blockquote {
@@ -189,24 +176,4 @@
   .Type blockquote {
     font-size: 1.5em;
   }
-}
-
-
-/* Responsive videos */
-
-.Type-embed {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  margin: var(--Type-spacing) 0;
-}
-
-.Type-embed > * {
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
 }

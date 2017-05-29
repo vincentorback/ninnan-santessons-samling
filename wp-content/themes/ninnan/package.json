@@ -42,13 +42,11 @@
     "ignoreFiles": "assets/css/**/*-min.css",
     "extends": "stylelint-config-standard",
     "rules": {
-      "max-empty-lines": 3,
-      "rule-empty-line-before": null,
-      "number-leading-zero": null,
-      "custom-property-empty-line-before": null,
+      "max-empty-lines": 2,
+      "number-leading-zero": "never",
+      "declaration-empty-line-before": null,
       "at-rule-empty-line-before": null,
-      "selector-pseudo-class-case": null,
-      "declaration-empty-line-before": null
+      "selector-pseudo-class-case": null
     }
   },
   "standard": {
