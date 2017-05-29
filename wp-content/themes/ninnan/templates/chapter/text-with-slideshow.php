@@ -40,7 +40,7 @@ $section_id = $pagination . '-' . $url_safe_title;
     $imageCount = count($slideshow_images);
     $slideshow_id = uniqid();
     ?>
-    <figure class="Slideshow Slideshow--sticky js-slideshow" id="<?php echo $slideshow_id; ?>" data-slides="<?php echo $imageCount; ?>" data-loaded="0">
+    <figure class="Slideshow Slideshow--sticky js-slideshow" id="<?php echo $slideshow_id; ?>" data-slides="<?php echo $imageCount; ?>">
       <?php if ($slideshow_images) { ?>
       <div class="Slideshow-slider js-slideshowSlider">
         <?php foreach ($slideshow_images as $slideshow_image) { ?>

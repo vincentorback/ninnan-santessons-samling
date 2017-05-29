@@ -27,7 +27,7 @@ if ($about_page) {
           $imageCount = count($images);
         ?>
         <br><br>
-        <figure class="Slideshow Slideshow--small js-slideshow" id="<?php echo $slideshow_id; ?>" data-slides="<?php echo $imageCount; ?>" data-loaded="0">
+        <figure class="Slideshow Slideshow--small js-slideshow" id="<?php echo $slideshow_id; ?>" data-slides="<?php echo $imageCount; ?>">
           <div class="Slideshow-slider js-slideshowSlider">
             <?php foreach( $images as $image ) { ?>
             <div class="Slideshow-item js-slideshowItem">
