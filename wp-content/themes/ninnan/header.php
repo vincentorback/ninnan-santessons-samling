@@ -28,9 +28,7 @@
   </script>
 </head>
 
-<body <?php body_class('Site-body'); ?>>
-
-<?php if (!is_404()) { ?>
+<body class="Site-body">
 
   <header class="Section Section--intro Section--gray" role="banner">
     <div class="Site-container">
@@ -86,5 +84,3 @@
       <span class="Navigation-openText">Meny</span>
     </button>
   </nav>
-
-<?php } ?>
