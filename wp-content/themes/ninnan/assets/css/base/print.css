@@ -1,9 +1,15 @@
 @media print {
-  * {
-    background: none;
-    box-shadow: none;
-    color: #000;
-    text-shadow: none;
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    color: #000 !important;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
   }
 
   a {
@@ -12,7 +18,65 @@
     font-size: 1em;
   }
 
+  .Section-titleLink,
+  .Section-chapterIntroTitleLink {
+    text-decoration: none;
+  }
+
+
+  table,
+  blockquote,
+  pre,
+  code,
+  figure,
+  li,
+  hr,
+  ul,
+  ol,
+  a,
+  tr {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-height: 90vh;
+    border: 0;
+    display: block;
+    max-width: 100% !important;
+    vertical-align: middle;
+
+    page-break-after: auto;
+    page-break-before: auto;
+    page-break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  h4,
+  p,
+  a {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1 + p,
+  h2 + p,
+  h3 + p {
+    page-break-before: avoid;
+  }
+
   .Navigation,
+  .Page-pagination,
   .Slideshow-buttonNav,
   .Section--index,
   .Section-scrollDown {
@@ -38,10 +102,6 @@
 
   .Slideshow-item {
     display: block;
-  }
-
-  img {
-    max-height: 90vh;
   }
 
   .Intro-date {
