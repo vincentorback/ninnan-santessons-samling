@@ -34,6 +34,9 @@ if ($about_page) {
               <img
               class="Slideshow-itemImage js-lazy"
               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              sizes="(max-width: 800px) 100vw, 50vw"
+              data-srcset="<?php echo $slideshow_image['sizes']['medium']; ?> 1000w,
+                <?php echo $slideshow_image['sizes']['thumbnail']; ?> 500w"
               data-src="<?php echo $image['sizes']['medium']; ?>"
               <?php if ($imageCount > 1) { ?>data-slideshow="<?php echo $slideshow_id; ?>"<?php } ?>
               alt="<?php echo $image['alt']; ?>">
