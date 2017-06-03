@@ -4,9 +4,18 @@
   'use strict'
 
   var doc = window.document
+  var docEl = doc.documentElement
   var activeClass = 'is-active'
   var loadedClass = 'is-loaded'
   var errorClass = 'is-error'
+
+  function lazyScrollIntoView (targetEl) {
+    targetEl.scrollIntoView()
+
+    window.setTimeout(function () {
+      targetEl.scrollIntoView()
+    }, 200)
+  }
 
   var Ninnan = {
     init: function () {
@@ -24,9 +33,7 @@
       var sectionEl = doc.getElementById(pathname)
 
       if (sectionEl) {
-        window.setTimeout(function () {
-          sectionEl.scrollIntoView()
-        })
+        lazyScrollIntoView(sectionEl)
       }
     },
 
@@ -43,11 +50,7 @@
           var targetEl = doc.querySelector(href.substring(href.indexOf('#')))
 
           if (targetEl) {
-            targetEl.scrollIntoView()
-
-            window.setTimeout(function () {
-              targetEl.scrollIntoView()
-            }, 200)
+            lazyScrollIntoView(targetEl)
           }
         })
       })
@@ -86,7 +89,6 @@
     },
 
     lazyImages: function () {
-      var slideshows = {}
       var lazySelector = '.js-lazy'
       var paginationSelector = '.js-slideshowPagination'
       var captionSelector = '.js-slideshowCaption'
@@ -95,10 +97,10 @@
       var navItemSelector = '.js-slideshowNavItem'
       var leftButtonSelector = '.js-slideshowLeft'
       var rightButtonSelector = '.js-slideshowRight'
-
       var captionText = ''
       var reversedClass = 'is-reversed'
-      var viewportHeight = Math.max(doc.documentElement.clientHeight, window.innerHeight || 0)
+      var viewportHeight = Math.max(docEl.clientHeight, window.innerHeight || 0)
+      var slideshows = {}
 
       var lazyImages = new Blazy({
         offset: viewportHeight,
@@ -181,23 +183,15 @@
 
               if (!Modernizr.touchevents && slideshowLeftButton && slideshowRightButton) {
                 slideshowLeftButton.addEventListener('click', function (e) {
-                  if (dragend.page !== 0) {
-                    dragend.scrollToPage(dragend.page)
-                  } else {
-                    // Reverse
-                    dragend.scrollToPage(dragend.page + 2)
-                  }
+                  var targetPage = (dragend.page !== 0) ? dragend.page : dragend.page + 2
+                  dragend.scrollToPage(targetPage)
 
                   e.preventDefault()
                 })
 
                 slideshowRightButton.addEventListener('click', function (e) {
-                  if ((dragend.page + 1) !== dragend.pagesCount) {
-                    dragend.scrollToPage(dragend.page + 2)
-                  } else {
-                    // Reverse
-                    dragend.scrollToPage(dragend.page)
-                  }
+                  var targetPage = ((dragend.page + 1) !== dragend.pagesCount) ? dragend.page + 2 : dragend.page
+                  dragend.scrollToPage(targetPage)
 
                   e.preventDefault()
                 })
@@ -262,7 +256,7 @@
       }
 
       window.addEventListener('resize', function () {
-        viewportHeight = Math.max(doc.documentElement.clientHeight, window.innerHeight || 0)
+        viewportHeight = Math.max(docEl.clientHeight, window.innerHeight || 0)
       })
     },
 
