@@ -47,7 +47,7 @@ $section_id = $pagination . '-' . $url_safe_title;
         <div class="Slideshow-item js-slideshowItem" data-caption="<?php echo $slideshow_image['caption']; ?>">
           <img
           class="Slideshow-itemImage js-lazy"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
           sizes="(max-width: 800px) 100vw, 50vw"
           data-srcset="<?php echo $slideshow_image['sizes']['medium']; ?> 1000w,
             <?php echo $slideshow_image['sizes']['thumbnail']; ?> 500w"

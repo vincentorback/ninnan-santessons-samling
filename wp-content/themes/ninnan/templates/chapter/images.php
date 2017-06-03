@@ -28,7 +28,7 @@ if ($images) {
       <figure class="Figure" id="<?php echo $image['title']; ?>">
         <img
           class="Figure-image js-lazy"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
           sizes="100vw"
           data-srcset="<?php echo $image['sizes']['large']; ?> 1600w,
             <?php echo $image['sizes']['medium']; ?> 1000w,

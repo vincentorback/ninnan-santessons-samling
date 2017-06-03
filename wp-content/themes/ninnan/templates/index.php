@@ -24,7 +24,7 @@
             <img
               class="Index-itemImage js-lazy"
               data-src="<?php echo $forewords_image[0]; ?>"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
               alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $forewords_image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
@@ -75,7 +75,7 @@
             <img
               class="Index-itemImage js-lazy"
               data-src="<?php echo $image[0]; ?>"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
               alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
@@ -118,7 +118,7 @@
             <img
               class="Index-itemImage js-lazy"
               data-src="<?php echo $image[0]; ?>"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
               alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
@@ -158,7 +158,7 @@
             <img
               class="Index-itemImage js-lazy"
               data-src="<?php echo $afterwords_image[0]; ?>"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
               alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $afterwords_image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
@@ -192,7 +192,7 @@
             <img
               class="Index-itemImage js-lazy"
               data-src="<?php echo $about_image[0]; ?>"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACwAAAAAAQABAAACAkQBADs="
               alt="">
             <noscript><img class="Index-itemImage" src="<?php echo $about_image[0]; ?>" alt=""></noscript>
             <div class="Index-itemInfo">
