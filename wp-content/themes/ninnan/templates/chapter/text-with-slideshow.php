@@ -64,10 +64,10 @@ $section_id = $pagination . '-' . $url_safe_title;
         <button class="Slideshow-navButton Slideshow-navButton--right js-slideshowRight" type="button">&rarr;</button>
       </div>
       <?php } ?>
-      <div class="Slideshow-info">
+      <figcaption class="Slideshow-info">
         <div class="Slideshow-infoPagination js-slideshowPagination">1/<?php echo $imageCount; ?></div>
         <div class="Slideshow-infoCredits js-slideshowCaption"><?php echo $slideshow_images[0]['caption']; ?></div>
-      </div>
+      </figcaption>
       <?php } ?>
     </figure>
 
