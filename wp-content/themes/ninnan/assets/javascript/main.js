@@ -307,5 +307,10 @@
     }
   }
 
-  window.addEventListener('load', Ninnan.init, false)
+  if (doc.readyState !== 'loading') {
+    Ninnan.init()
+  } else {
+    doc.addEventListener('DOMContentLoaded', Ninnan.init, false)
+  }
+
 }(window))

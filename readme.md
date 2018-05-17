@@ -3,7 +3,8 @@
 ## Install
 1. [Download](https://wordpress.org/download/) and install WordPress into the `/wp` folder.
 2. Set up and activate the Ninnan theme.
-3. Import `acf-data.json` to your ACF installation.
+3. Install [ACF Pro](https://www.advancedcustomfields.com/)
+4. Import `acf-data.json` to your ACF installation.
 
 ## Development
 1. Navigate to the theme folder `/wp-content/themes/ninnan/`

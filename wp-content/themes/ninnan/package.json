@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "parallelshell 'npm run watch'",
-    "build:js": "uglifyjs $npm_package_config_js_files --comments -o assets/javascript/main-min.js",
+    "build:js": "uglifyjs $npm_package_config_js_files -o assets/javascript/main-min.js",
     "build:css": "postcss -u postcss-import -u postcss-cssnext -u csswring --no-map -o assets/css/style-min.css assets/css/style.css",
     "build:css:wysiwyg": "postcss -u postcss-import -u postcss-cssnext -u csswring --no-map -o assets/css/wysiwyg-min.css assets/css/wysiwyg.css",
     "build:deploy": "npm run lint:js && npm run build:js && npm run build:css",
@@ -26,17 +26,17 @@
     "suitcss-components-grid": "^3.0.3"
   },
   "devDependencies": {
-    "csswring": "^6.0.0",
+    "csswring": "^6.0.1",
     "eye": "^0.0.3",
-    "parallelshell": "^2.0.0",
-    "postcss-cli": "^4.0.0",
-    "postcss-cssnext": "^2.11.0",
-    "postcss-import": "^10.0.0",
-    "postcss-reporter": "^3.0.0",
-    "standard": "^10.0.2",
-    "stylelint": "^7.10.1",
-    "stylelint-config-standard": "^16.0.0",
-    "uglify-js": "^3.0.9"
+    "parallelshell": "^3.0.2",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-reporter": "^5.0.0",
+    "standard": "^10.0.3",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0",
+    "uglify-js": "^3.1.9"
   },
   "stylelint": {
     "ignoreFiles": "assets/css/**/*-min.css",

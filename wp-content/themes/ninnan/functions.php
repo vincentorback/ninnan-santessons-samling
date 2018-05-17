@@ -24,11 +24,10 @@ function getCustomPage($title = '') {
     return $by_title;
   }
 
-  /* TODO: Comments are local, change these. */
   $pages = array(
-    'Förord' => 2, // 43
-    'Efterord' => 44, // 45
-    'Om projektet' => 42 // 47
+    'Förord' => 2,
+    'Efterord' => 44,
+    'Om projektet' => 42
   );
 
   $page = get_page($pages[$title]);

@@ -1,36 +1,6 @@
 <?php
 
 /**
- * Hide core updates
- */
-add_action( 'after_setup_theme', function () {
-
-  // Still show updates to superadmins
-  if ( (! current_user_can( 'update_core' )) || is_super_admin() ) {
-    return;
-  }
-
-  add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
-  add_filter( 'pre_option_update_core', '__return_null' );
-  add_filter( 'pre_site_transient_update_core', '__return_null' );
-}, 1 );
-
-
-/**
- * Disable plugin update notifications
- */
-remove_action( 'load-update-core.php', 'wp_update_plugins' );
-add_filter( 'pre_site_transient_update_plugins', '__return_null' );
-
-
-/**
- * Hide the admin bar on the front-end
- * @link https://codex.wordpress.org/Function_Reference/show_admin_bar
- */
-add_filter( 'show_admin_bar', '__return_false' );
-
-
-/**
  * Hide or create new menus and items in the admin bar.
  * @link https://codex.wordpress.org/Class_Reference/WP_Admin_Bar/add_menu
  *
@@ -109,10 +79,7 @@ add_action( 'admin_init', function () {
  * @link https://codex.wordpress.org/Function_Reference/wp_deregister_script
  */
 add_action( 'wp_enqueue_scripts', function () {
-  if ( !is_admin() ) {
-     wp_deregister_script( 'jquery' );
-     wp_deregister_script( 'wp-embed' );
-  }
+   wp_deregister_script( 'wp-embed' );
 });
 
 

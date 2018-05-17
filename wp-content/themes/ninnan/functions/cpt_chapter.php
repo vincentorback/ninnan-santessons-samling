@@ -40,15 +40,3 @@ function chapter_register() {
 
   register_post_type( 'chapter' , $args );
 }
-
-
-
-
-
-/**
- * Custom left admin footer text
- * @link https://developer.wordpress.org/reference/hooks/admin_footer_text/
- */
-add_filter( 'admin_footer_text', function () {
-  return '<span id="footer-thankyou">Website by <a href="//vincentorback.se" target="_blank">Vincent Orback</a></span>';
-}, 999);
